@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Classes
 {
-    public class PlayerClass : BaseEntity
+    public class Enemy : BaseEntity
     {
-        public int inventorySpace;
-        public int[] buffs;
-        public int[] debuffs;
-
+        public bool Alive;
     }
 }
