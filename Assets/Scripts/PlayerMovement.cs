@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     // Movement
     public float moveSpeed;
     Rigidbody2D rb;
-    Vector2 moveDir;
+    [HideInInspector]
+    public Vector2 moveDir;
 
     // Start is called before the first frame update
     void Start()
