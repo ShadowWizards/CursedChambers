@@ -30,27 +30,11 @@ public class PlayerAnimator : MonoBehaviour
         {
             am.SetBool("Move", false);
         }
-        if (pm.moveDir.y > 0)
-        {
-            am.SetBool("MoveUp", true);
-        }
-        else
-        {
-            am.SetBool("MoveUp", false);
-        }
-        if (pm.moveDir.y < 0)
-        {
-            am.SetBool("MoveDown", true);
-        }
-        else
-        {
-            am.SetBool("MoveDown", false);
-        }
     }
 
     void SpriteDirectionChecker()
     {
-        if (pm.moveDir.x > 0)
+        if (pm.moveDir.x < 0)
         {
             sr.flipX = true;
         }
