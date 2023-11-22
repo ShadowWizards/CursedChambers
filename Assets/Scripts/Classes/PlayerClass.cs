@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.Classes
 {
-    public class PlayerClass : BaseEntity
+    public class PlayerClass : MonoBehaviour
     {
+        public double Hp;
+        public double Str;
+        public double Def;
+        public double Speed;
         public int inventorySpace;
-        public int[] buffs;
-        public int[] debuffs;
+        public Buff[] buffs;
+        public Debuff[] debuffs;
 
     }
 }
