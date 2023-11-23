@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5230206bc1154f34896cb6b286301010
+guid: e2c002b75b3d18a468731f96e44a1ef2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: knight_0
+      name: floor_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 0
-        width: 12
-        height: 19
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc23013d3409cc14289ef3dca95fc9ad
-      internalID: 2039737920
+      spriteID: e9862bfab498ec44d926f4a997de08ca
+      internalID: 432632349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_1
+      name: floor_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 14
-        height: 21
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d6cc295b9ba5bd43aadb9364b5f6f77
-      internalID: 1211874371
+      spriteID: d715057e6564a164299859371bba9146
+      internalID: 465355308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_2
+      name: floor_2
       rect:
         serializedVersion: 2
-        x: 72
+        x: 0
         y: 0
-        width: 14
-        height: 20
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 303465387f291844abdee61c6d843f8d
-      internalID: -1292883084
+      spriteID: 015d8740202f0ce46a073d5932595310
+      internalID: -1932180545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_3
+      name: floor_3
       rect:
         serializedVersion: 2
-        x: 104
+        x: 16
         y: 0
-        width: 14
-        height: 21
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,29 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dd4de04fab2fee4da458eb12a058c99
-      internalID: 1996506078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: knight_4
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 0
-        width: 14
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d6bcc1509b0f0848b28c148430c253b
-      internalID: 733906540
+      spriteID: 83f4af3242febab45b00441c65adb728
+      internalID: 1219884531
       vertices: []
       indices: 
       edges: []
@@ -238,11 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      knight_0: 2039737920
-      knight_1: 1211874371
-      knight_2: -1292883084
-      knight_3: 1996506078
-      knight_4: 733906540
+      floor_0: 432632349
+      floor_1: 465355308
+      floor_2: -1932180545
+      floor_3: 1219884531
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
