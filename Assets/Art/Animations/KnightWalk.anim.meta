@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Art/Animations/KnightWalk.anim.meta
 guid: 4da4a9a52e7a97f4ea32b589a3c369a6
-========
-guid: b2bf90a4fcc07c840ac91f9eb5e3f183
->>>>>>>> Yuuto:Assets/Art/Animations/Player/PlayerWalkDown.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
