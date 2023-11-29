@@ -1,12 +1,8 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Art/Tiles/Wall2x_0.asset.meta
 guid: ed930257cd8d5224ea0a62e6be17da0c
-========
-guid: b2bf90a4fcc07c840ac91f9eb5e3f183
->>>>>>>> main:Assets/Art/Animations/Player/PlayerWalkDown.anim.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 7400000
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

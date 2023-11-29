@@ -1,12 +1,8 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Art/Tiles/Wall2x_1.asset.meta
 guid: f741ae973b61e3141b95e923cce2d9e3
-========
-guid: 5302535af1044152a457ed104f1f4b91
-timeCreated: 1487723159
-licenseType: Pro
->>>>>>>> main:Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset.meta
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

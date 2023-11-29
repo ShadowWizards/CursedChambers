@@ -1,12 +1,8 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Art/Tiles/Wall2x_3.asset.meta
 guid: cf58f1160f1eef24ea7fdeef37b3bce5
-========
-guid: 34250255b85c35248bfc226ee01e18c7
->>>>>>>> main:Assets/Art/Animations/Player/PlayerIdle.anim.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 7400000
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
