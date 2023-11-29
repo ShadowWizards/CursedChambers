@@ -94,11 +94,11 @@ public class PlayerMovement : MonoBehaviour
         
         if (moveInput.x < 0.1)
         {
-            transform.localRotation = Quaternion.Euler(0,0,0);
+            transform.localRotation = Quaternion.Euler(0,180,0);
         }
         else
         {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         }
     }
