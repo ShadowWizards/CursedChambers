@@ -1,2 +1,4 @@
 # CursedChambers
-A rogue-like dungeon crawler indie game created by a bunch of university students in Unity
+A rogue-like dungeon crawler indie game
+
+Made by a bunch of university students in Unity
