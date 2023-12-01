@@ -154,11 +154,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 385464163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe21bb2c66c8e141b17666827076591, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a75b3daac88b3c419a015696ab63fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  moveDir: {x: 0, y: 0}
 --- !u!95 &385464165
 Animator:
   serializedVersion: 5
@@ -283,9 +281,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 385464163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef6200e89a7b4748bb45411f98edf91, type: 3}
+  m_Script: {fileID: 11500000, guid: 0371187ce29963740a40911dd6b438cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hp: 0
+  Str: 0
+  Def: 0
+  Speed: 0
+  inventorySpace: 0
+  buffs: []
+  debuffs: []
 --- !u!61 &385464170
 BoxCollider2D:
   m_ObjectHideFlags: 0
