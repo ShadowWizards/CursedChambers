@@ -26,12 +26,10 @@ public class PlayerMovement : MonoBehaviour
         // Get the spriteRenderer of the player
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-
         // actualSpeed is the default speed which is equal to 1 for now
         // and player Speed is the speed that the player is given by default or by buffs
         player = GetComponent<PlayerClass>();
         actualSpeed = 1 + player.Speed;
-
     }
 
     // Update is called once per frame
@@ -55,9 +53,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isSorDownPressed", Input.GetKey(KeyCode.S));
         animator.SetBool("isDorRightPressed", Input.GetKey(KeyCode.D));
 
-
         // Get last key pressed by the user
-
         if (Input.GetKeyDown(KeyCode.D))
         {
             lastKeyPressed = KeyCode.D;
@@ -81,7 +77,6 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-
         // Set player speed
         if (moveInput.x == 0 && moveInput.y == 0)
         {
@@ -92,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
             actualSpeed = 1 + player.Speed;
         }
         
+        // Change player sprite drawing direction
         if (moveInput.x < 0.1)
         {
             transform.localRotation = Quaternion.Euler(0,180,0);
@@ -99,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
-
         }
     }
 
@@ -116,7 +111,6 @@ public class PlayerMovement : MonoBehaviour
         // the velocity that will be assigned to the player depending on which input axis they are
         playerXVelocity = new Vector2(horizontal * actualSpeed, 0);
         playerYVelocity = new Vector2(0, vertical * actualSpeed);
-
 
         // In case two buttons are pressed at the same time set priority of movement to the last key pressed
         if (isMovingHorizontal && isMovingVertical)
@@ -153,6 +147,5 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRigidBody.velocity = Vector2.zero;
         }
-        
     }
 }
