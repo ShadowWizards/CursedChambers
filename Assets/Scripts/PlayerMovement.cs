@@ -88,11 +88,11 @@ public class PlayerMovement : MonoBehaviour
         }
         
         // Change player sprite drawing direction
-        if (moveInput.x < 0.1)
+        if (moveInput.x < 0)
         {
             transform.localRotation = Quaternion.Euler(0,180,0);
         }
-        else
+        else if(moveInput.x > 0)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
