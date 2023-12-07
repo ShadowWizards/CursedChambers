@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aaf18e04cc384e62db6c22ae80b8d41d
+guid: 66d02ef86c2f5fe43bc243abb46ce283
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,70 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: floor_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9862bfab498ec44d926f4a997de08ca
-      internalID: 432632349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: floor_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aba8d79a04957034fa748b089964c08e
-      internalID: 465355308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: floor_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0b35a4e7dcdb5e4aab7786e27a9b744
-      internalID: -1932180545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: floor_3
+      name: wood_0
       rect:
         serializedVersion: 2
         x: 16
@@ -200,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6aea69ca838a49440a8343df4cd56fbc
-      internalID: 1219884531
+      spriteID: dcc2334da857dcd4996fbe8cd127813b
+      internalID: 1914038171
       vertices: []
       indices: 
       edges: []
@@ -217,10 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      floor_0: 432632349
-      floor_1: 465355308
-      floor_2: -1932180545
-      floor_3: 1219884531
+      wood_0: 1914038171
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
