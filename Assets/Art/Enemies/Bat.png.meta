@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aaf18e04cc384e62db6c22ae80b8d41d
+guid: 5b5901310b4cdaf49837fc69577f14b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: floor_0
+      name: Bat_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
+        x: 2
+        y: 1
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9862bfab498ec44d926f4a997de08ca
-      internalID: 432632349
+      spriteID: c275e2f47a0c7fa4c9b62175275789e3
+      internalID: -582700267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_1
+      name: Bat_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 19
+        y: 1
+        width: 11
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aba8d79a04957034fa748b089964c08e
-      internalID: 465355308
+      spriteID: 72ff3787a37457645a74bf7d152e63d6
+      internalID: -438799847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_2
+      name: Bat_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 33
+        y: 1
+        width: 14
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0b35a4e7dcdb5e4aab7786e27a9b744
-      internalID: -1932180545
+      spriteID: c7742f1cdc5740b42a71f564e3dfd88c
+      internalID: 400259421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_3
+      name: Bat_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
+        x: 50
+        y: 1
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6aea69ca838a49440a8343df4cd56fbc
-      internalID: 1219884531
+      spriteID: 90530f19e1593a546b9016dd6f3b70e0
+      internalID: -1455027853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bat_4
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a02e9ea625a5b4c8bac2bd80074bad
+      internalID: -94888852
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      floor_0: 432632349
-      floor_1: 465355308
-      floor_2: -1932180545
-      floor_3: 1219884531
+      Bat_0: -582700267
+      Bat_1: -438799847
+      Bat_2: 400259421
+      Bat_3: -1455027853
+      Bat_4: -94888852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
