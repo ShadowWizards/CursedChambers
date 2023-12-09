@@ -43,39 +43,25 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", moveInput.x);
         animator.SetFloat("Vertical", moveInput.y);
 
-       //animator.SetBool("isWorUpPressed", Input.GetKey(KeyCode.UpArrow));
-       //animator.SetBool("isAorLeftPressed", Input.GetKey(KeyCode.LeftArrow));
-       //animator.SetBool("isSorDownPressed", Input.GetKey(KeyCode.DownArrow));
-       //animator.SetBool("isDorRightPressed", Input.GetKey(KeyCode.RightArrow));
+        // Get last key pressed by the user
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            lastKeyPressed = KeyCode.D;
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            lastKeyPressed = KeyCode.A;
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            lastKeyPressed = KeyCode.W;
 
-        // animator.SetBool("isWorUpPressed", Input.GetKey(KeyCode.W));
-        // animator.SetBool("isAorLeftPressed", Input.GetKey(KeyCode.A));
-        // animator.SetBool("isSorDownPressed", Input.GetKey(KeyCode.S));
-        // animator.SetBool("isDorRightPressed", Input.GetKey(KeyCode.D));
+        }
+        else if(Input.GetKeyDown(KeyCode.S))
+        {
+            lastKeyPressed = KeyCode.S;
 
-        // // Get last key pressed by the user
-        // if (Input.GetKeyDown(KeyCode.D))
-        // {
-        //     lastKeyPressed = KeyCode.D;
-        //     animator.SetInteger("lastKeyPressed", 3);
-        // }
-        // else if (Input.GetKeyDown(KeyCode.A))
-        // {
-        //     lastKeyPressed = KeyCode.A;
-        //     animator.SetInteger("lastKeyPressed", 4);
-        // }
-        // else if (Input.GetKeyDown(KeyCode.W))
-        // {
-        //     lastKeyPressed = KeyCode.W;
-        //     animator.SetInteger("lastKeyPressed", 1);
-
-        // }
-        // else if(Input.GetKeyDown(KeyCode.S))
-        // {
-        //     lastKeyPressed = KeyCode.S;
-        //     animator.SetInteger("lastKeyPressed", 2);
-
-        // }
+        }
 
         // // Set player speed
         if (moveInput.x == 0 && moveInput.y == 0)
@@ -113,26 +99,26 @@ public class PlayerMovement : MonoBehaviour
         playerYVelocity = new Vector2(0, vertical * actualSpeed);
 
         // In case two buttons are pressed at the same time set priority of movement to the last key pressed
-        // if (isMovingHorizontal && isMovingVertical)
-        // {
-        //     switch (lastKeyPressed)
-        //     {
-        //         case KeyCode.W:
-        //             playerRigidBody.velocity = playerYVelocity;
-        //             break;
-        //         case KeyCode.S:
-        //             playerRigidBody.velocity = playerYVelocity;
-        //             break;
-        //         case KeyCode.D:
-        //             playerRigidBody.velocity = playerXVelocity;
-        //             break;
-        //         case KeyCode.A:
-        //             playerRigidBody.velocity = playerXVelocity;
-        //             break;
-        //     }
-        // }
+        if (isMovingHorizontal && isMovingVertical)
+        {
+            switch (lastKeyPressed)
+            {
+                case KeyCode.W:
+                    playerRigidBody.velocity = playerYVelocity;
+                    break;
+                case KeyCode.S:
+                    playerRigidBody.velocity = playerYVelocity;
+                    break;
+                case KeyCode.D:
+                    playerRigidBody.velocity = playerXVelocity;
+                    break;
+                case KeyCode.A:
+                    playerRigidBody.velocity = playerXVelocity;
+                    break;
+            }
+        }
         // If moving on the vertical input axis
-        if (isMovingVertical)
+        else if (isMovingVertical)
         {
             animator.SetFloat("Vertical", moveInput.y);
             playerRigidBody.velocity = playerYVelocity;
