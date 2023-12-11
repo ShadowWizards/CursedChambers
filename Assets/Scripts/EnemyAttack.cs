@@ -3,22 +3,19 @@ using System.Collections.Generic;
 using Assets.Scripts.Classes;
 using UnityEngine;
 
-
-
-
 public class EnemyScript : MonoBehaviour
 {
-    public float damagePerSecond = 10f;
-    public double Hp;
+    // References
+    public double damage;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-      
-        // Sprawdź, czy zderzyliśmy się z obiektem gracza
-        if (collision.gameObject.CompareTag("Player"))
-        {
-          PlayerClass player = collision.gameObject.GetComponent<PlayerClass>();
-          player.TakeDamage(damagePerSecond);
-        }
+      // Check if Enemy collides with Player
+      if (collision.gameObject.CompareTag("Player"))
+      {
+        PlayerDamageHandler player = collision.gameObject.GetComponent<PlayerDamageHandler>();
+        damage = GetComponent<Enemy>().Str;
+        player.TakeDamage(damage);
+      }
     }
 }
