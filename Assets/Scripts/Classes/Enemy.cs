@@ -12,7 +12,7 @@ namespace Assets.Scripts.Classes
         public double Hp;
         public double Str;
         public double Def;
-        public double Speed;
+        public float Speed;
         public bool Friendly;
         public bool Alive;
         public string[] buffs;
