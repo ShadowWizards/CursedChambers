@@ -4,18 +4,19 @@ using Assets.Scripts.Classes;
 using UnityEngine;
 
 public class EnemyMovment : MonoBehaviour
-
 {
-  private Enemy enemy;
+    // References
     private float speed;
-    private Transform player; // Referencja do obiektu gracza
-    private Rigidbody rb;
+    private Enemy enemy;
+    private Transform player;
 
     void Start()
     {
+        // Assign Enemy speed
         speed = GetComponent<Enemy>().Speed;
-        player = GameObject.FindGameObjectWithTag("Player").transform; // Znajdź obiekt gracza
-        rb = GetComponent<Rigidbody>();
+
+        // Assign Player object
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
@@ -25,17 +26,10 @@ public class EnemyMovment : MonoBehaviour
 
     void MoveTowardsPlayer()
     {
-        // Kierunek od przeciwnika do gracza
+        // Direction from opponent to Player
         Vector2 direction = (player.position - transform.position).normalized;
 
-        // Ruch przeciwnika w kierunku gracza
-        //rb.MoveTowards(rb.position + direction * speed * Time.deltaTime);
+        // Enemy movement towards the Player
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed*Time.deltaTime);
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-      
-    }
-
 }

@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6149791709614329154}
-  - component: {fileID: 9155594823962339829}
-  - component: {fileID: 8356244497052292473}
-  - component: {fileID: 4734138135930630607}
   - component: {fileID: 2033609392060099732}
+  - component: {fileID: 9155594823962339829}
   - component: {fileID: 3259608973000206288}
+  - component: {fileID: 4734138135930630607}
+  - component: {fileID: 8356244497052292473}
   - component: {fileID: 7583751078974368157}
   m_Layer: 0
   m_Name: Bat
@@ -37,6 +37,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2033609392060099732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285544523667937734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a92984d1d477924b92c4dcabe12a786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Str: 2
+  Def: 0
+  Speed: 2
+  Friendly: 0
+  Alive: 0
+  buffs: []
+  debuffs: []
 --- !u!212 &9155594823962339829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -89,59 +109,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8356244497052292473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3285544523667937734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0c95452b32c3014184a8692870263fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &4734138135930630607
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3285544523667937734}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c1e0542a8e4596245b3af3a4d3e5d685, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2033609392060099732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3285544523667937734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a92984d1d477924b92c4dcabe12a786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 0
-  Str: 0
-  Def: 0
-  Speed: 2
-  Friendly: 0
-  Alive: 0
-  buffs: []
-  debuffs: []
 --- !u!61 &3259608973000206288
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -174,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -185,8 +152,41 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.8125}
+  m_Size: {x: 0.75, y: 0.6}
   m_EdgeRadius: 0
+--- !u!95 &4734138135930630607
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285544523667937734}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1e0542a8e4596245b3af3a4d3e5d685, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8356244497052292473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285544523667937734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c95452b32c3014184a8692870263fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7583751078974368157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,5 +199,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687535519a817054aa1e890d4c44c04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerSecond: 2
-  Hp: 0
+  damage: 0

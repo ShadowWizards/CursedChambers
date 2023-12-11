@@ -15,7 +15,7 @@ namespace Assets.Scripts.Classes
         public float Speed;
         public bool Friendly;
         public bool Alive;
-        public string[] buffs;
-        public string[] debuffs;
+        public Buff[] buffs;
+        public Debuff[] debuffs;
     }
 }
