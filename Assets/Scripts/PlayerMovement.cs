@@ -43,41 +43,27 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", moveInput.x);
         animator.SetFloat("Vertical", moveInput.y);
 
-       //animator.SetBool("isWorUpPressed", Input.GetKey(KeyCode.UpArrow));
-       //animator.SetBool("isAorLeftPressed", Input.GetKey(KeyCode.LeftArrow));
-       //animator.SetBool("isSorDownPressed", Input.GetKey(KeyCode.DownArrow));
-       //animator.SetBool("isDorRightPressed", Input.GetKey(KeyCode.RightArrow));
-
-        animator.SetBool("isWorUpPressed", Input.GetKey(KeyCode.W));
-        animator.SetBool("isAorLeftPressed", Input.GetKey(KeyCode.A));
-        animator.SetBool("isSorDownPressed", Input.GetKey(KeyCode.S));
-        animator.SetBool("isDorRightPressed", Input.GetKey(KeyCode.D));
-
         // Get last key pressed by the user
         if (Input.GetKeyDown(KeyCode.D))
         {
             lastKeyPressed = KeyCode.D;
-            animator.SetInteger("lastKeyPressed", 3);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             lastKeyPressed = KeyCode.A;
-            animator.SetInteger("lastKeyPressed", 4);
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
             lastKeyPressed = KeyCode.W;
-            animator.SetInteger("lastKeyPressed", 1);
 
         }
         else if(Input.GetKeyDown(KeyCode.S))
         {
             lastKeyPressed = KeyCode.S;
-            animator.SetInteger("lastKeyPressed", 2);
 
         }
 
-        // Set player speed
+        // // Set player speed
         if (moveInput.x == 0 && moveInput.y == 0)
         {
             actualSpeed = 0;
