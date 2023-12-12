@@ -9,9 +9,9 @@ namespace Assets.Scripts.Classes
 {
     public class Enemy : MonoBehaviour
     {
-        public double Hp;
-        public double Str;
-        public double Def;
+        public float Hp;
+        public float Str;
+        public float Def;
         public float Speed;
         public bool Friendly;
         public bool Alive;

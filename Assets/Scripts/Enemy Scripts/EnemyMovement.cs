@@ -6,17 +6,17 @@ using UnityEngine;
 public class EnemyMovment : MonoBehaviour
 {
     // References
-    private float speed;
-    private Enemy enemy;
-    private Transform player;
+    private float _speed;
+    private Enemy _enemy;
+    private Transform _player;
 
     void Start()
     {
         // Assign Enemy speed
-        speed = GetComponent<Enemy>().Speed;
+        _speed = GetComponent<Enemy>().Speed;
 
         // Assign Player object
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
@@ -27,9 +27,9 @@ public class EnemyMovment : MonoBehaviour
     void MoveTowardsPlayer()
     {
         // Direction from opponent to Player
-        Vector2 direction = (player.position - transform.position).normalized;
+        Vector2 direction = (_player.position - transform.position).normalized;
 
         // Enemy movement towards the Player
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed*Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _speed*Time.deltaTime);
     }
 }

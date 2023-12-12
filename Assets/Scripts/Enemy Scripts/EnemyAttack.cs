@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Assets.Scripts.Classes;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyAttack : MonoBehaviour
 {
     // References
-    public double damage;
+    public float damage;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
