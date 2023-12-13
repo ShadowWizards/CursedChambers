@@ -7,10 +7,10 @@ public class ButtonClick : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject playerObject;
-    private PlayerClass playerClass;
+    private Player _playerClass;
     void Start()
     {
-        playerClass = playerObject.GetComponent<PlayerClass>();
+        _playerClass = playerObject.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -19,9 +19,9 @@ public class ButtonClick : MonoBehaviour
         
     }
 
-    public void onButtonClick()
+    public void OnButtonClick()
     {
-        playerClass.Speed = 5;
+        _playerClass.Speed = 5;
     }
     
 }

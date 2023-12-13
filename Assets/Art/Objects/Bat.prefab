@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6149791709614329154}
-  - component: {fileID: 2033609392060099732}
   - component: {fileID: 9155594823962339829}
   - component: {fileID: 3259608973000206288}
   - component: {fileID: 4734138135930630607}
+  - component: {fileID: 2033609392060099732}
   - component: {fileID: 8356244497052292473}
   - component: {fileID: 7583751078974368157}
+  - component: {fileID: 454813069891923464}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -37,26 +38,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2033609392060099732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3285544523667937734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a92984d1d477924b92c4dcabe12a786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 0
-  Str: 2
-  Def: 0
-  Speed: 2
-  Friendly: 0
-  Alive: 0
-  buffs: []
-  debuffs: []
 --- !u!212 &9155594823962339829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -175,6 +156,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2033609392060099732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285544523667937734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a92984d1d477924b92c4dcabe12a786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Str: 2
+  Def: 0
+  Speed: 2
+  Friendly: 0
+  Alive: 0
+  buffs: []
+  debuffs: []
 --- !u!114 &8356244497052292473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +201,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+--- !u!114 &454813069891923464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285544523667937734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e0876d2600321b0962cbb54261bc26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
