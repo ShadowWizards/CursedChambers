@@ -67,7 +67,8 @@ public class PlayerDamageHandler : MonoBehaviour
 
     public void Kill()
     {
-        Destroy(_player.gameObject);
+        Time.timeScale = 0f;
+        //Destroy(_player.gameObject);
     }
 
     public void FlashDamage()
