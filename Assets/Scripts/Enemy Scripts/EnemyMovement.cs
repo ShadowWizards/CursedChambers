@@ -29,6 +29,16 @@ public class EnemyMovment : MonoBehaviour
         // Direction from opponent to Player
         Vector2 direction = (_player.position - transform.position).normalized;
 
+        // Change player sprite drawing direction
+        if (direction.x < 0)
+        {
+            transform.localRotation = Quaternion.Euler(0,180,0);
+        }
+        else if(direction.x > 0)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+
         // Enemy movement towards the Player
         transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _speed*Time.deltaTime);
     }
