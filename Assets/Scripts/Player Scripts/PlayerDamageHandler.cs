@@ -12,6 +12,7 @@ public class PlayerDamageHandler : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private float _flashDuration = 0.15f;
     private float _flashTimer;
+    private AudioSource _audioSource;
 
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class PlayerDamageHandler : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _player = GetComponent<Player>();
+        _audioSource = GetComponent<AudioSource>();
     }
     
     // Update is called once per frame
@@ -50,6 +52,7 @@ public class PlayerDamageHandler : MonoBehaviour
         // If Player is not invincible they take damage
         if(!_isInvincible)
         {
+            _audioSource.Play();
             _player.Hp -= dmg;
             _invincibilityTimer = _player.invincibilityDuration;
             _isInvincible = true;
