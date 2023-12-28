@@ -1,3 +1,4 @@
+using CodeMonkey.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,14 +15,17 @@ public class UI_Shop : MonoBehaviour
     {
         container = transform.Find("container");
         shopItemTemplate = container.Find("shopItemTemplate");
-        shopItemTemplate.gameObject.SetActive(false);
     }
 
     private void Start()
     {
         CreateItemButton(Item.ItemType.fruit1, Item.GetSprite(Item.ItemType.fruit1), "Orange", Item.GetCost(Item.ItemType.fruit1), 0);
         CreateItemButton(Item.ItemType.fruit2, Item.GetSprite(Item.ItemType.fruit2), "Grape", Item.GetCost(Item.ItemType.fruit2), 1);
-
+        CreateItemButton(Item.ItemType.fruit3, Item.GetSprite(Item.ItemType.fruit3), "Pineapple", Item.GetCost(Item.ItemType.fruit3), 2);
+        CreateItemButton(Item.ItemType.fruit4, Item.GetSprite(Item.ItemType.fruit4), "Peach", Item.GetCost(Item.ItemType.fruit4), 3);
+        CreateItemButton(Item.ItemType.fruit5, Item.GetSprite(Item.ItemType.fruit5), "Pitahaya", Item.GetCost(Item.ItemType.fruit5), 4);
+        CreateItemButton(Item.ItemType.fruit6, Item.GetSprite(Item.ItemType.fruit6), "Peper", Item.GetCost(Item.ItemType.fruit6), 5);
+        shopItemTemplate.gameObject.SetActive(false);
         Hide();
     }
 
@@ -30,7 +34,7 @@ public class UI_Shop : MonoBehaviour
         Transform shopItemTransform = Instantiate(shopItemTemplate, container);
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
 
-        float shopItemHeight = 30f;
+        float shopItemHeight = 55f;
         shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
 
         shopItemTransform.Find("nameText").GetComponent<TextMeshProUGUI>().SetText(itemName);
@@ -38,10 +42,15 @@ public class UI_Shop : MonoBehaviour
 
         shopItemTransform.Find("itemImage").GetComponent<UnityEngine.UI.Image>().sprite = itemSprite;
 
-        shopItemTransform.GetComponent<Button_UI>().ClickFunc = () => {
+       shopItemTransform.GetComponent<Button_UI>().ClickFunc = () => {
             // Clicked on shop item button
             TryBuyItem(itemType);
-        };
+       };
+    }
+
+    private void TryBuyItem(Item.ItemType itemType)
+    {
+        shopCustomer.BoughtItem(itemType);
     }
 
     public void Show(IShopCustomer shopCustomer)
