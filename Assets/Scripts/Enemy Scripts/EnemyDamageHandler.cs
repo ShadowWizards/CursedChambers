@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class EnemyDamageHandler : MonoBehaviour
 {
-    public GameObject playerObject;
-    public GameObject slash;
+    private GameObject _playerObject;
+    private GameObject _slash;
     
     private Enemy _enemy;
     private float _invincibilityTimer;
@@ -41,9 +41,17 @@ public class EnemyDamageHandler : MonoBehaviour
 
     void Start()
     {
+        _playerObject = GameObject.FindGameObjectWithTag("Player");
+        foreach (Transform child in _playerObject.transform)
+        {
+            if (child.CompareTag("Attack"))
+            {
+                _slash = child.gameObject;
+            }
+        }
         _enemy = GetComponent<Enemy>();
         _enemySpriteRenderer = GetComponent<SpriteRenderer>();
-        _slashSpriteRenderer = slash.GetComponent<SpriteRenderer>();
+        _slashSpriteRenderer = _slash.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
