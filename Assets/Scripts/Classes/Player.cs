@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Classes
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IShopCustomer
     {
         public float Hp;
         public float Str;
@@ -18,6 +18,11 @@ namespace Assets.Scripts.Classes
         public float playerCooldown;
         public Buff[] buffs;
         public Debuff[] debuffs;
+
+        public void BoughtItem(Item.ItemType itemType)
+        {
+            Debug.Log("Bought item" + itemType); 
+        }
     }
 
 }
