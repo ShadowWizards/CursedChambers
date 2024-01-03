@@ -32,6 +32,12 @@ public class EnemyDamageHandler : MonoBehaviour
             _enemy.Hp -= 2;
 
             _invincibilityTimer = Time.time + (float)0.65;
+
+            // Knockback
+            Rigidbody2D enemy = GetComponent<Rigidbody2D>();
+            Vector2 difference = _playerObject.transform.position - transform.position;
+            difference = difference.normalized * -7f;
+            enemy.AddForce(difference, ForceMode2D.Impulse);
         }
         else
         {
