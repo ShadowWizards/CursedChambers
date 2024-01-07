@@ -1,4 +1,3 @@
-using CodeMonkey.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,17 +18,17 @@ public class UI_Shop : MonoBehaviour
 
     private void Start()
     {
-        CreateItemButton(Item.ItemType.fruit1, Item.GetSprite(Item.ItemType.fruit1), "Orange", Item.GetCost(Item.ItemType.fruit1), 0);
-        CreateItemButton(Item.ItemType.fruit2, Item.GetSprite(Item.ItemType.fruit2), "Grape", Item.GetCost(Item.ItemType.fruit2), 1);
-        CreateItemButton(Item.ItemType.fruit3, Item.GetSprite(Item.ItemType.fruit3), "Pineapple", Item.GetCost(Item.ItemType.fruit3), 2);
-        CreateItemButton(Item.ItemType.fruit4, Item.GetSprite(Item.ItemType.fruit4), "Peach", Item.GetCost(Item.ItemType.fruit4), 3);
-        CreateItemButton(Item.ItemType.fruit5, Item.GetSprite(Item.ItemType.fruit5), "Pitahaya", Item.GetCost(Item.ItemType.fruit5), 4);
-        CreateItemButton(Item.ItemType.fruit6, Item.GetSprite(Item.ItemType.fruit6), "Peper", Item.GetCost(Item.ItemType.fruit6), 5);
+        CreateItemButton(Item.ItemEnum.Fruit1, Item.GetSprite(Item.ItemEnum.Fruit1), "Orange", Item.GetCost(Item.ItemEnum.Fruit1), 0);
+        CreateItemButton(Item.ItemEnum.Fruit2, Item.GetSprite(Item.ItemEnum.Fruit2), "Grape", Item.GetCost(Item.ItemEnum.Fruit2), 1);
+        CreateItemButton(Item.ItemEnum.Fruit3, Item.GetSprite(Item.ItemEnum.Fruit3), "Pineapple", Item.GetCost(Item.ItemEnum.Fruit3), 2);
+        CreateItemButton(Item.ItemEnum.Fruit4, Item.GetSprite(Item.ItemEnum.Fruit4), "Peach", Item.GetCost(Item.ItemEnum.Fruit4), 3);
+        CreateItemButton(Item.ItemEnum.Fruit5, Item.GetSprite(Item.ItemEnum.Fruit5), "Pitahaya", Item.GetCost(Item.ItemEnum.Fruit5), 4);
+        CreateItemButton(Item.ItemEnum.Fruit6, Item.GetSprite(Item.ItemEnum.Fruit6), "Peper", Item.GetCost(Item.ItemEnum.Fruit6), 5);
         shopItemTemplate.gameObject.SetActive(false);
         Hide();
     }
 
-    private void CreateItemButton(Item.ItemType itemType, Sprite itemSprite, string itemName, int itemCost, int positionIndex)
+    private void CreateItemButton(Item.ItemEnum itemType, Sprite itemSprite, string itemName, int itemCost, int positionIndex)
     {
         Transform shopItemTransform = Instantiate(shopItemTemplate, container);
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
@@ -48,7 +47,7 @@ public class UI_Shop : MonoBehaviour
        };
     }
 
-    private void TryBuyItem(Item.ItemType itemType)
+    private void TryBuyItem(Item.ItemEnum itemType)
     {
         shopCustomer.BoughtItem(itemType);
     }
