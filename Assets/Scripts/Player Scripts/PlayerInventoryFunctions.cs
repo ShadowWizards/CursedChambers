@@ -123,7 +123,7 @@ namespace Player_Scripts
                 image.color = Color.white;
                 
                 RectTransform rectTransform = itemFrame.GetComponent<RectTransform>();
-                rectTransform.sizeDelta = new Vector2(59, 59);
+                rectTransform.sizeDelta = new Vector2(95, 95);
                 rectTransform.localPosition = GetInvSlotPosition(_invSlotAdd,invCanvas);
                 
                 itemFrame.transform.SetParent(invCanvas.transform);
@@ -167,7 +167,7 @@ namespace Player_Scripts
                 image.color = Color.white;
                 
                 RectTransform rectTransform = itemFrame.GetComponent<RectTransform>();
-                rectTransform.sizeDelta = new Vector2(59, 59);
+                rectTransform.sizeDelta = new Vector2(95, 95);
                 rectTransform.localPosition = GetInvSlotPosition(_invSlotAdd,invCanvas);
                 
                 itemFrame.transform.SetParent(invCanvas.transform);
@@ -184,23 +184,23 @@ namespace Player_Scripts
             switch (invSlot)
             {
                 case 1:
-                    return new Vector2(_invCanvasPos.x + -96, _invCanvasPos.y + 130);
+                    return new Vector2(_invCanvasPos.x + -148, _invCanvasPos.y + 197);
                 case 2:
-                    return new Vector2(_invCanvasPos.x + 0, _invCanvasPos.y + 130); 
+                    return new Vector2(_invCanvasPos.x + 1, _invCanvasPos.y + 197); 
                 case 3:
-                    return new Vector2(_invCanvasPos.x + 96, _invCanvasPos.y + 130);
+                    return new Vector2(_invCanvasPos.x + 148, _invCanvasPos.y + 197);
                 case 4:
-                    return new Vector2(_invCanvasPos.x + -96, _invCanvasPos.y + -24);
+                    return new Vector2(_invCanvasPos.x + -148, _invCanvasPos.y + (float)-39.5);
                 case 5:
-                    return new Vector2(_invCanvasPos.x + 0, _invCanvasPos.y + -24); 
+                    return new Vector2(_invCanvasPos.x + 1, _invCanvasPos.y + (float)-39.5); 
                 case 6:
-                    return new Vector2(_invCanvasPos.x + 96, _invCanvasPos.y + -24);
+                    return new Vector2(_invCanvasPos.x + 148, _invCanvasPos.y + (float)-39.5);
                 case 7:
-                    return new Vector2(_invCanvasPos.x + -96, _invCanvasPos.y + -180);
+                    return new Vector2(_invCanvasPos.x + -148, _invCanvasPos.y + -278);
                 case 8:
-                    return new Vector2(_invCanvasPos.x + 0, _invCanvasPos.y + -180); 
+                    return new Vector2(_invCanvasPos.x + 1, _invCanvasPos.y + -278); 
                 case 9:
-                    return new Vector2(_invCanvasPos.x + 96, _invCanvasPos.y + -180);
+                    return new Vector2(_invCanvasPos.x + 148, _invCanvasPos.y + -278);
                 default:
                     return new Vector2(0, 0);
             }

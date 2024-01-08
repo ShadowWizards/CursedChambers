@@ -22,6 +22,7 @@ public class InputHandler : MonoBehaviour
         _playerClass = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _invCanvas = GameObject.FindGameObjectWithTag("Inventory_Canvas");
         _inventoryFunctions = gameObject.AddComponent<PlayerInventoryFunctions>();
+        _inventoryGameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +35,7 @@ public class InputHandler : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.F))
         {
+            Debug.Log(_inventoryGameObject.tag);
             if (!_inventoryGameObject.activeSelf)
             {
                 OpenInventory();

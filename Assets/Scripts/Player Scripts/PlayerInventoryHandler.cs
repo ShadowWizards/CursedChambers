@@ -28,7 +28,7 @@ namespace Player_Scripts
             
             _inventoryFunctions = gameObject.AddComponent<PlayerInventoryFunctions>();
             //_inventoryFunctions.AddItem(Item.ItemEnum.Fruit2,_invCanvas,_playerClass);
-            gameObject.SetActive(false);
+            
         }
 
         void Update()
