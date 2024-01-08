@@ -7,6 +7,7 @@ TagManager:
   - Attack
   - Inventory
   - Inventory_Canvas
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

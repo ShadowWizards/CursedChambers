@@ -7,50 +7,40 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     private static bool _gameIsPaused;
-    private Transform container;
-    private Transform canvas;
 
     // Start is called before the first frame update
     void Start()
     {
-        canvas = transform.Find("Canvas");
-        container = canvas.Find("container");
-        container.gameObject.SetActive(false);
+        _gameIsPaused = false;
+    }
+    void OnGUI()
+    {
+        if(!_gameIsPaused)
+            this.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PauseGame()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            _gameIsPaused = !_gameIsPaused;
-            PauseGame();
-        }
-    }
-
-    void PauseGame()
-    {
+        _gameIsPaused = !_gameIsPaused;
         if(_gameIsPaused)
         {
             Time.timeScale = 0f;
-            container.gameObject.SetActive(true);
+            this.gameObject.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
-            container.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 
     public void ContinueGame()
     {
-        _gameIsPaused = false;
         PauseGame();
     }
 
     public void MainMenu()
     {
-        _gameIsPaused = false;
         PauseGame();
         SceneManager.LoadScene(0);
     }

@@ -6,15 +6,14 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    private static bool gameIsPaused;
-
-    private GameObject _inventoryGameObject;
+    public GameObject _inventoryGameObject;
 
     private GameObject _invCanvas;
 
     private Player _playerClass;
 
     private PlayerInventoryFunctions _inventoryFunctions;
+    public PauseMenu _pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +21,7 @@ public class InputHandler : MonoBehaviour
         _playerClass = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _invCanvas = GameObject.FindGameObjectWithTag("Inventory_Canvas");
         _inventoryFunctions = gameObject.AddComponent<PlayerInventoryFunctions>();
+        _pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<PauseMenu>();
         _inventoryGameObject.SetActive(false);
     }
 
@@ -30,8 +30,7 @@ public class InputHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameIsPaused = !gameIsPaused;
-            PauseGame();
+            _pauseMenu.PauseGame();
         }
         else if (Input.GetKeyDown(KeyCode.F))
         {
@@ -47,19 +46,6 @@ public class InputHandler : MonoBehaviour
             
         }
     }
-    
-    void PauseGame()
-    {
-        if(gameIsPaused)
-        {
-            Time.timeScale = 0f;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
-    }
-
     void OpenInventory()
     {
         _inventoryGameObject.SetActive(true);

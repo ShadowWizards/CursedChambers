@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ExitControl : MonoBehaviour
 {
     private GameObject _player;
+    private GameObject _UI;
     private Transform container;
     private bool isInRange = false;
     public int sceneBuildIndex;
@@ -13,6 +14,7 @@ public class ExitControl : MonoBehaviour
     void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
+        _UI = GameObject.Find("UI");
         container = transform.Find("ExitContainer");
         container.gameObject.SetActive(false);
     }
@@ -42,6 +44,7 @@ public class ExitControl : MonoBehaviour
 
         // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
         SceneManager.MoveGameObjectToScene(_player, SceneManager.GetSceneByBuildIndex(sceneBuildIndex));
+        SceneManager.MoveGameObjectToScene(_UI, SceneManager.GetSceneByBuildIndex(sceneBuildIndex));
         
         // Unload the previous Scene
         SceneManager.UnloadSceneAsync(currentScene);
