@@ -30844,6 +30844,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3674602611002553834, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674602611002553834, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674602611002553834, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 462641951}
+    - target: {fileID: 3674602611002553834, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674602611002553834, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674602611002553834, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InvSelecFuncs, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674602611002553834, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3705895097536107481, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
       propertyPath: m_Name
       value: UI
