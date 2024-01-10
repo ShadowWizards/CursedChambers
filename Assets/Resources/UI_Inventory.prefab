@@ -854,7 +854,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2706651646745689067}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4039282995849740105}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1044313342795089693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,8 +1037,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27.6, y: -2.8}
-  m_SizeDelta: {x: 38.9059, y: 35.5682}
+  m_AnchoredPosition: {x: -31.7, y: -1.8}
+  m_SizeDelta: {x: 48.9419, y: 47.0424}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6969167412871369883
 CanvasRenderer:
@@ -1109,7 +1121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6810989545169707079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1608727456438582061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,7 +1283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3202028320387546197
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1539,7 +1563,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1444707372718596357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6216371551776053286}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2269567344293760643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,8 +1746,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.60316, y: -2.800136}
-  m_SizeDelta: {x: 38.9059, y: 35.5682}
+  m_AnchoredPosition: {x: 28.937458, y: -1.8001215}
+  m_SizeDelta: {x: 48.9419, y: 47.0424}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8273502600209046813
 CanvasRenderer:
@@ -1794,7 +1830,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6126874465285756800}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: RemoveItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3074891862173068033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,7 +1989,7 @@ GameObject:
   - component: {fileID: 8783764238014822139}
   m_Layer: 0
   m_Name: ClickableSlots
-  m_TagString: Untagged
+  m_TagString: ClickableSlots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2154,7 +2202,7 @@ MonoBehaviour:
     m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 3031389715888770555}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -2181,7 +2229,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 636187847858048488}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3031389715888770555}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3856025520262455680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,7 +2922,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5080087512347487970}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2987572083472178717}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6200483512696551919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,7 +3055,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8799482073199315400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7942654066533833786}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7441500060103956863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3238,7 +3322,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2388035666273919448}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4354120569357944038}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7951837728973774879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,7 +3455,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8965369382907052896}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4443578746404255894}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8005445737200927639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,7 +3734,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8277792901421118868}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6411007228817350406}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8138755232944963447
 GameObject:
   m_ObjectHideFlags: 0
@@ -4040,7 +4160,7 @@ GameObject:
   - component: {fileID: 4139431071740681888}
   m_Layer: 0
   m_Name: InteractionButtons
-  m_TagString: Untagged
+  m_TagString: InteractionButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4063,7 +4183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142.3, y: 291.4}
+  m_AnchoredPosition: {x: -142, y: 291.4}
   m_SizeDelta: {x: 109.9756, y: 41.5072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8746179541180181764
@@ -4186,4 +4306,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6871670951587749354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8783764238014822139}
+        m_TargetAssemblyTypeName: InvSelecFuncs, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5992079074225825888}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

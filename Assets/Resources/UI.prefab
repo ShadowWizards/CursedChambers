@@ -1409,14 +1409,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Inventory
       objectReference: {fileID: 0}
-    - target: {fileID: 542206918464273188, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 963480829868409563, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1669538791411461723, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1436,10 +1428,6 @@ PrefabInstance:
     - target: {fileID: 1751860572045298002, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.8001215
-      objectReference: {fileID: 0}
-    - target: {fileID: 1983189141289089710, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2900893268232501262, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1488,10 +1476,6 @@ PrefabInstance:
     - target: {fileID: 2987572083472178717, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.UI.Button, UnityEngine.UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3031389715888770555, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3031389715888770555, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
@@ -1560,10 +1544,6 @@ PrefabInstance:
     - target: {fileID: 3544408504571853049, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684221009564284034, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4039282995849740105, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1777,14 +1757,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.UI.Button, UnityEngine.UI
       objectReference: {fileID: 0}
-    - target: {fileID: 5992128782444970053, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6200483512696551919, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6216371551776053286, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1849,10 +1821,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.UI.Button, UnityEngine.UI
       objectReference: {fileID: 0}
-    - target: {fileID: 7474878762164682905, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7942654066533833786, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1885,21 +1853,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.UI.Button, UnityEngine.UI
       objectReference: {fileID: 0}
-    - target: {fileID: 7951837728973774879, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8076355134712640123, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8715685934908474733, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_TagString
       value: InteractionButtons
-      objectReference: {fileID: 0}
-    - target: {fileID: 8746179541180181764, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9060580848483606608, guid: 8206ccc3d7cff8320aafaa2303445d94, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
