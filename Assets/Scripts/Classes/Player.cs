@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Classes
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IShopCustomer
     {
         public float Hp;
         public float Str;
@@ -16,8 +16,14 @@ namespace Assets.Scripts.Classes
         public int inventorySpace;
         public float invincibilityDuration;
         public float playerCooldown;
+        public List<Item> inventory = new List<Item>();
         public Buff[] buffs;
         public Debuff[] debuffs;
+
+        public void BoughtItem(Item.ItemEnum itemType)
+        {
+            Debug.Log("Bought item" + itemType); 
+        }
     }
 
 }

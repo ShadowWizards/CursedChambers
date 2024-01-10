@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public Transform target;
+    private Transform _target;
     public Vector3 offest;
+
+    void Start()
+    {
+        _target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = target.position + offest;
+        transform.position = _target.position + offest;
     }
 }

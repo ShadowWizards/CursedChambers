@@ -9,6 +9,9 @@ public class EnemyMovment : MonoBehaviour
     private float _speed;
     private Enemy _enemy;
     private Transform _player;
+    private float _distance;
+    private bool _playerFound = false;
+    private float _detectionRange = 5;
 
     void Start()
     {
@@ -21,7 +24,20 @@ public class EnemyMovment : MonoBehaviour
 
     void Update()
     {
-        MoveTowardsPlayer();
+        // The enemy keeps checking the distance between it and the player until it reaches the detection range, then follows the player
+        if(!_playerFound)
+        {
+            _distance = Vector2.Distance(_player.position, transform.position);
+            
+            if(_distance <= _detectionRange)
+            {
+                _playerFound = true;
+            }
+        }
+        else
+        {
+            MoveTowardsPlayer();
+        }
     }
 
     void MoveTowardsPlayer()
@@ -29,7 +45,7 @@ public class EnemyMovment : MonoBehaviour
         // Direction from opponent to Player
         Vector2 direction = (_player.position - transform.position).normalized;
 
-        // Change player sprite drawing direction
+        // Change enemy sprite drawing direction
         if (direction.x < 0)
         {
             transform.localRotation = Quaternion.Euler(0,180,0);

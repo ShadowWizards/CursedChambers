@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class EnemyDamageHandler : MonoBehaviour
 {
-    public GameObject playerObject;
-    public GameObject slash;
+    private GameObject _playerObject;
+    private GameObject _slash;
     
     private Enemy _enemy;
     private float _invincibilityTimer;
@@ -19,11 +19,13 @@ public class EnemyDamageHandler : MonoBehaviour
     {
         
         Debug.Log("collision");
+        // Destroy the enemy object when health gets to 0
         if (_enemy.Hp <= 0)
         {
             Destroy(_enemy.gameObject);
         }
 
+        // Makes sure the player is not already attacking as well as that the attack delay has finished
         if (Time.time >= _invincibilityTimer && collision2D.CompareTag("Attack") && _slashSpriteRenderer.sprite.name == "slash_0")
         {
             
@@ -32,6 +34,12 @@ public class EnemyDamageHandler : MonoBehaviour
             _enemy.Hp -= 2;
 
             _invincibilityTimer = Time.time + (float)0.65;
+
+            // Knockback
+            Rigidbody2D enemy = GetComponent<Rigidbody2D>();
+            Vector2 difference = _playerObject.transform.position - transform.position;
+            difference = difference.normalized * -7f;
+            enemy.AddForce(difference, ForceMode2D.Impulse);
         }
         else
         {
@@ -41,9 +49,17 @@ public class EnemyDamageHandler : MonoBehaviour
 
     void Start()
     {
+        _playerObject = GameObject.FindGameObjectWithTag("Player");
+        foreach (Transform child in _playerObject.transform)
+        {
+            if (child.CompareTag("Attack"))
+            {
+                _slash = child.gameObject;
+            }
+        }
         _enemy = GetComponent<Enemy>();
         _enemySpriteRenderer = GetComponent<SpriteRenderer>();
-        _slashSpriteRenderer = slash.GetComponent<SpriteRenderer>();
+        _slashSpriteRenderer = _slash.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
