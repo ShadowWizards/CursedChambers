@@ -16,6 +16,8 @@ namespace Assets.Scripts.Classes
         public int inventorySpace;
         public float invincibilityDuration;
         public float playerCooldown;
+        public int Coins;
+        public int Score;
         public List<Item> inventory = new List<Item>();
         public Buff[] buffs;
         public Debuff[] debuffs;

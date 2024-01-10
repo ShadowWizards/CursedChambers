@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8437331947776127496}
+  - component: {fileID: 3426787975272859616}
   - component: {fileID: 1049706690173097890}
   - component: {fileID: 2063461827746746999}
   - component: {fileID: 471902385469357196}
   - component: {fileID: 3295207689430625733}
-  - component: {fileID: 3426787975272859616}
   - component: {fileID: 583033417709274831}
   - component: {fileID: 3945316499588452939}
   - component: {fileID: 3935858247861160475}
@@ -41,6 +41,30 @@ Transform:
   - {fileID: 5325305635902243416}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3426787975272859616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511182684188009351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371187ce29963740a40911dd6b438cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 20
+  Str: 0
+  Def: 0
+  Speed: 5
+  inventorySpace: 0
+  invincibilityDuration: 1
+  playerCooldown: 0
+  Coins: 0
+  Score: 0
+  inventory: []
+  buffs: []
+  debuffs: []
 --- !u!212 &1049706690173097890
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -186,28 +210,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &3426787975272859616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5511182684188009351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0371187ce29963740a40911dd6b438cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 20
-  Str: 0
-  Def: 0
-  Speed: 5
-  inventorySpace: 0
-  invincibilityDuration: 1
-  playerCooldown: 0
-  inventory: []
-  buffs: []
-  debuffs: []
 --- !u!114 &583033417709274831
 MonoBehaviour:
   m_ObjectHideFlags: 0

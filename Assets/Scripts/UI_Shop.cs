@@ -40,7 +40,6 @@ public class UI_Shop : MonoBehaviour
         
         float shopItemHeight = 0f;
         float shopItemWidth = 147f * (positionIndex % 3);
-        Debug.Log(shopItemWidth);
 
         if(positionIndex == 0 || positionIndex == 1 || positionIndex == 2)
             shopItemHeight = 0f;

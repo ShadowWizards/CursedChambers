@@ -8,6 +8,8 @@ TagManager:
   - Inventory
   - Inventory_Canvas
   - PauseMenu
+  - HealthBar
+  - Currency
   layers:
   - Default
   - TransparentFX
