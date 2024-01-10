@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    public string InvEntry;
+    public string Slot;
     public ItemEnum ItemType;
     public bool IsHealing
     {
