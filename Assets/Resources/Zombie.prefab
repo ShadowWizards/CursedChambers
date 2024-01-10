@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 978987598374163014}
+  - component: {fileID: 4960692997541875470}
   - component: {fileID: 127192540159955547}
   - component: {fileID: 4898521978644588818}
   - component: {fileID: 2546585698814199432}
-  - component: {fileID: 4960692997541875470}
   - component: {fileID: 1143783631376159506}
   - component: {fileID: 7198594972995190961}
   - component: {fileID: 301663997492639706}
@@ -39,6 +39,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4960692997541875470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343841289768187469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a92984d1d477924b92c4dcabe12a786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 20
+  Str: 4
+  Def: 0
+  Speed: 1
+  Friendly: 0
+  Alive: 0
+  buffs: []
+  debuffs: []
+  CoinDropped: 4
+  ScoreReward: 10
 --- !u!212 &127192540159955547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -157,26 +179,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4960692997541875470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8343841289768187469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a92984d1d477924b92c4dcabe12a786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 10
-  Str: 2
-  Def: 0
-  Speed: 2
-  Friendly: 0
-  Alive: 0
-  buffs: []
-  debuffs: []
 --- !u!114 &1143783631376159506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,8 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e0876d2600321b0962cbb54261bc26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 167928635748102875, guid: 9416d1a593475e6099c158fe17689b71, type: 3}
-  slash: {fileID: 526367910011602255, guid: 730cc44551c48994a9f299b7256be2ea, type: 3}
 --- !u!50 &7204760837856176137
 Rigidbody2D:
   serializedVersion: 4

@@ -8,12 +8,11 @@ public class EnemyDamageHandler : MonoBehaviour
 {
     private GameObject _playerObject;
     private GameObject _slash;
-    
     private Enemy _enemy;
     private float _invincibilityTimer;
     private SpriteRenderer _slashSpriteRenderer;
-
     private SpriteRenderer _enemySpriteRenderer;
+    private RewardHandler _rewardHandler;
     // Start is called before the first frame update
     public void OnTriggerStay2D(Collider2D collision2D)
     {
@@ -22,6 +21,8 @@ public class EnemyDamageHandler : MonoBehaviour
         // Destroy the enemy object when health gets to 0
         if (_enemy.Hp <= 0)
         {
+            _rewardHandler.addCurrency(_enemy.CoinDropped);
+            _rewardHandler.addScore(_enemy.ScoreReward);
             Destroy(_enemy.gameObject);
         }
 
@@ -60,6 +61,7 @@ public class EnemyDamageHandler : MonoBehaviour
         _enemy = GetComponent<Enemy>();
         _enemySpriteRenderer = GetComponent<SpriteRenderer>();
         _slashSpriteRenderer = _slash.GetComponent<SpriteRenderer>();
+        _rewardHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<RewardHandler>();
     }
 
     // Update is called once per frame

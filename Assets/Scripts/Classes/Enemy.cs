@@ -17,5 +17,7 @@ namespace Assets.Scripts.Classes
         public bool Alive;
         public Buff[] buffs;
         public Debuff[] debuffs;
+        public int CoinDropped;
+        public int ScoreReward;
     }
 }
