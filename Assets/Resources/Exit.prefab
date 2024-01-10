@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405b6c10505ae4a4ab479612503c7ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fade: {fileID: 0}
   sceneBuildIndex: 0
 --- !u!212 &5903017183710689713
 SpriteRenderer:
