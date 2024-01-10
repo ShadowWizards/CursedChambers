@@ -16,10 +16,11 @@ namespace Assets.Scripts.Classes
         public int inventorySpace;
         public float invincibilityDuration;
         public float playerCooldown;
+        public List<Item> inventory = new List<Item>();
         public Buff[] buffs;
         public Debuff[] debuffs;
 
-        public void BoughtItem(Item.ItemType itemType)
+        public void BoughtItem(Item.ItemEnum itemType)
         {
             Debug.Log("Bought item" + itemType); 
         }

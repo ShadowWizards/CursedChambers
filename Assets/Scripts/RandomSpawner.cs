@@ -6,7 +6,7 @@ public class RandomSpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         int randEnemy = Random.Range(0, enemyPrefabs.Length);
 

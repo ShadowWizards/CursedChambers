@@ -20,6 +20,8 @@ public class PlayerAttackAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Checks if the correct key is pressed down and executes the appropriate change to the player or slash sprites
+        
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             _slashAnimator.SetBool("isAttacking",true);
