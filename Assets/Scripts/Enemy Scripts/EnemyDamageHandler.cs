@@ -13,6 +13,8 @@ public class EnemyDamageHandler : MonoBehaviour
     private SpriteRenderer _slashSpriteRenderer;
     private SpriteRenderer _enemySpriteRenderer;
     private RewardHandler _rewardHandler;
+    private float _flashDuration = 0.15f;
+    private float _flashTimer;
     // Start is called before the first frame update
     public void OnTriggerStay2D(Collider2D collision2D)
     {
@@ -31,7 +33,7 @@ public class EnemyDamageHandler : MonoBehaviour
         {
             
             Debug.Log("Hit");
-            _enemySpriteRenderer.color = Color.red;
+            FlashDamage();
             _enemy.Hp -= 2;
 
             _invincibilityTimer = Time.time + (float)0.65;
@@ -42,10 +44,11 @@ public class EnemyDamageHandler : MonoBehaviour
             difference = difference.normalized * -7f;
             enemy.AddForce(difference, ForceMode2D.Impulse);
         }
-        else
-        {
-            _enemySpriteRenderer.color = Color.white;
-        }
+    }
+    void FlashDamage()
+    {
+        _enemySpriteRenderer.color = Color.red;
+        _flashTimer = _flashDuration;
     }
 
     void Start()
@@ -67,5 +70,14 @@ public class EnemyDamageHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Decrease flash timer until it reaches 0, then sets spriteRenderer back to normal
+        if(_flashTimer > 0)
+        {
+            _flashTimer -= Time.deltaTime;
+        }
+        else
+        {
+            _enemySpriteRenderer.color = Color.white;
+        }
     }
 }
