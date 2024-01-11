@@ -48,6 +48,10 @@ public class PlayerDamageHandler : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
+        dmg += Random.Range(-1, 2);
+        if(dmg < 0)
+            dmg = 0;
+
         // If Player is not invincible they take damage
         if(!_isInvincible)
         {

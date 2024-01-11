@@ -30514,26 +30514,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3752492954654747566, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3752492954654747566, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987264257610085875, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
-      propertyPath: m_text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6638716954274157281, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
-      propertyPath: m_TagString
-      value: Currency
-      objectReference: {fileID: 0}
-    - target: {fileID: 6907779187964400741, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
-      propertyPath: m_TagString
-      value: HealthBar
-      objectReference: {fileID: 0}
     - target: {fileID: 3705895097536107481, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
       propertyPath: m_Name
       value: UI
@@ -30585,6 +30565,26 @@ PrefabInstance:
     - target: {fileID: 5341145964356068830, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752492954654747566, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752492954654747566, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987264257610085875, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638716954274157281, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_TagString
+      value: Currency
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907779187964400741, guid: 6485e2afd8c08bdb5a07c6eb2d7224d5, type: 3}
+      propertyPath: m_TagString
+      value: HealthBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30713,6 +30713,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3426787975272859616, guid: 68c1e61f05a6fd3acae7e94b0e0e712e, type: 3}
+      propertyPath: Str
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5511182684188009351, guid: 68c1e61f05a6fd3acae7e94b0e0e712e, type: 3}
       propertyPath: m_Name
       value: Knight

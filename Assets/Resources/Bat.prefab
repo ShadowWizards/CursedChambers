@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.5121927, y: 2.6579168, z: 0}
-  m_LocalScale: {x: 2.0696, y: 1.8051, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -203,7 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687535519a817054aa1e890d4c44c04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!114 &454813069891923464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e0876d2600321b0962cbb54261bc26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpDamagePrefab: {fileID: 8325517170312801902, guid: f8b0772484bbab441a84252f58b82492, type: 3}
 --- !u!50 &414446768314981945
 Rigidbody2D:
   serializedVersion: 4
