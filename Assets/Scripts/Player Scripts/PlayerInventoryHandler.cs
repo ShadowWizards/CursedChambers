@@ -13,7 +13,6 @@ namespace Player_Scripts
         private GameObject _playerObject;
         private Player _playerClass;
         private PlayerInventoryFunctions _inventoryFunctions;
-        private Item _fruit1;
 
         
         

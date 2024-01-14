@@ -11,7 +11,7 @@ namespace Assets.Scripts.Classes
     {
         public float Hp;
         public float Str;
-        public float Def;
+        public float Shield;
         public float Speed;
         public int inventorySpace;
         public float invincibilityDuration;
