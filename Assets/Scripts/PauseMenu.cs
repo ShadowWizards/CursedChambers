@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     {
         _gameIsPaused = false;
     }
+    // Turns off the pause menu after it is referenced by other scripts, that's why it's in OnGui, rather than in the Start
     void OnGUI()
     {
         if(!_gameIsPaused)

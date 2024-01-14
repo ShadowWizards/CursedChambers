@@ -4,50 +4,52 @@ using UnityEngine;
 
 public class FadeInOut : MonoBehaviour
 {
-
+    // References
     public CanvasGroup canvasgroup;
-    public bool fadein;
-    public bool fadeout;
-    public float TimeToFade;
+    public bool fadeIn;
+    public bool fadeOut;
+    public float timeToFade;
 
     void Start()
     {
         canvasgroup = GetComponent<CanvasGroup>();
-        fadeout = true;
+        fadeOut = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(fadein == true)
+        // If fadein is true it slowly fades in
+        if(fadeIn == true)
         {
             if(canvasgroup.alpha < 1)
             {
-                canvasgroup.alpha += TimeToFade * Time.deltaTime;
+                canvasgroup.alpha += timeToFade * Time.deltaTime;
                 if(canvasgroup.alpha >= 1)
                 {
-                    fadein = false;
+                    fadeIn = false;
                 }
             }
         }
-        if(fadeout == true)
+        // If fadeout is true it slowly fades out
+        if(fadeOut == true)
         {
             if(canvasgroup.alpha >= 0)
             {
-                canvasgroup.alpha -= TimeToFade * Time.deltaTime;
+                canvasgroup.alpha -= timeToFade * Time.deltaTime;
                 if(canvasgroup.alpha == 0)
                 {
-                    fadeout = false;
+                    fadeOut = false;
                 }
             }
         }
     }
     public void FadeIn()
     {
-        fadein = true;
+        fadeIn = true;
     }
     public void FadeOut()
     {
-        fadeout = true;
+        fadeOut = true;
     }
 }

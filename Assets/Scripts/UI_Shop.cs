@@ -34,21 +34,10 @@ public class UI_Shop : MonoBehaviour
     {
         for(int i = 0; i < 9; i++)
         {
-            //First 6 items are fruits and the rest are normal items in total 40 items
+            // Gets a random item from ItemEnum, first 6 items are fruits and the rest are normal items in total 40 items
             Item.ItemEnum currentItem = (Item.ItemEnum)Random.Range(0, 6);
             CreateItemButton(currentItem, Item.GetSprite(currentItem), Item.GetName(currentItem), Item.GetCost(currentItem), i);
         }
-        /*
-        CreateItemButton(Item.ItemEnum.Orange, Item.GetSprite(Item.ItemEnum.Orange), "Orange", Item.GetCost(Item.ItemEnum.Orange), 0);
-        CreateItemButton(Item.ItemEnum.Grape, Item.GetSprite(Item.ItemEnum.Grape), "Grape", Item.GetCost(Item.ItemEnum.Grape), 1);
-        CreateItemButton(Item.ItemEnum.Pineapple, Item.GetSprite(Item.ItemEnum.Pineapple), "Pineapple", Item.GetCost(Item.ItemEnum.Pineapple), 2);
-        CreateItemButton(Item.ItemEnum.Peach, Item.GetSprite(Item.ItemEnum.Peach), "Peach", Item.GetCost(Item.ItemEnum.Peach), 3);
-        CreateItemButton(Item.ItemEnum.Pitahaya, Item.GetSprite(Item.ItemEnum.Pitahaya), "Pitahaya", Item.GetCost(Item.ItemEnum.Pitahaya), 4);
-        CreateItemButton(Item.ItemEnum.Pepper, Item.GetSprite(Item.ItemEnum.Pepper), "Pepper", Item.GetCost(Item.ItemEnum.Pepper), 5);
-        CreateItemButton(Item.ItemEnum.Pepper, Item.GetSprite(Item.ItemEnum.Pepper), "Pepper", Item.GetCost(Item.ItemEnum.Pepper), 6);
-        CreateItemButton(Item.ItemEnum.Pepper, Item.GetSprite(Item.ItemEnum.Pepper), "Pepper", Item.GetCost(Item.ItemEnum.Pepper), 7);
-        CreateItemButton(Item.ItemEnum.Pepper, Item.GetSprite(Item.ItemEnum.Pepper), "Pepper", Item.GetCost(Item.ItemEnum.Pepper), 8);
-        */
         _shopItemTemplate.gameObject.SetActive(false);
         Hide();
     }
@@ -82,14 +71,13 @@ public class UI_Shop : MonoBehaviour
             {
                 _inventoryFunctions.AddItem(itemType);
                 _rewardHandler.addCurrency(-Item.GetCost(itemType));
+                _shopCustomer.BoughtItem(itemType);
                 Destroy(shopItemTransform.gameObject);
             }
             else
             {
                 Debug.Log("Insufficient Coins");
             }
-            //_inventoryFunctions.AddItem(itemType);
-            //_shopCustomer.BoughtItem(itemType);
        };
     }
     public void Show(IShopCustomer shopCustomer)
