@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa10dee20e97e64cba374acec0eeb8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruit1: {fileID: 21300000, guid: c0df7f0641e5ae74bb906351cd486ef2, type: 3}
-  fruit2: {fileID: 21300000, guid: f8e546d7184408d47bca17be501b63cb, type: 3}
-  fruit3: {fileID: 21300000, guid: 4cf06af9047cf174aa9414d68b0379c3, type: 3}
-  fruit4: {fileID: 21300000, guid: a50f6b6cf40728e40910a8c3e4be5b92, type: 3}
-  fruit5: {fileID: 21300000, guid: 0b30121651bd5ed4ba1a4d8917be3f33, type: 3}
-  fruit6: {fileID: 21300000, guid: d78fe21b3ce4b7e48a8e1864ff5b208f, type: 3}
+  Orange: {fileID: 21300000, guid: c0df7f0641e5ae74bb906351cd486ef2, type: 3}
+  Grape: {fileID: 21300000, guid: f8e546d7184408d47bca17be501b63cb, type: 3}
+  Pineapple: {fileID: 21300000, guid: 4cf06af9047cf174aa9414d68b0379c3, type: 3}
+  Peach: {fileID: 21300000, guid: a50f6b6cf40728e40910a8c3e4be5b92, type: 3}
+  Pitahaya: {fileID: 21300000, guid: 0b30121651bd5ed4ba1a4d8917be3f33, type: 3}
+  Pepper: {fileID: 21300000, guid: d78fe21b3ce4b7e48a8e1864ff5b208f, type: 3}

@@ -30,23 +30,23 @@ public class ButtonClick : MonoBehaviour
 
     public void AddFruit2()
     {
-        _inventoryFunctions.AddItem(Item.ItemEnum.Fruit2);
+        _inventoryFunctions.AddItem(Item.ItemEnum.Grape);
     }
 
     public void AddBuff()
     {
-        _inventoryFunctions.AddItem(Item.ItemEnum.TestBuffItem);
+        _inventoryFunctions.AddItem(Item.ItemEnum.Pepper);
     }
 
     public void RemoveFruit2()
     {
-        _item.ItemType = Item.ItemEnum.Fruit2;
+        _item.ItemType = Item.ItemEnum.Grape;
         _inventoryFunctions.RemoveItem(_item);
     }
 
     public void RemoveBuff()
     {
-        _item.ItemType = Item.ItemEnum.TestBuffItem;
+        _item.ItemType = Item.ItemEnum.Pepper;
         _inventoryFunctions.RemoveItem(_item);
     }
     

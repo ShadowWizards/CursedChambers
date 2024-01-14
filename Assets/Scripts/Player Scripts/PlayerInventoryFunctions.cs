@@ -105,12 +105,12 @@ namespace Player_Scripts
         {
             switch (_playerClass.inventory)
             {
-                case { } fruit1 when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit1))):
-                case { } fruit2 when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit2))):
-                case { } fruit3 when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit3))):
-                case { } fruit4 when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit4))):
-                case { } fruit5 when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit5))):
-                case { } fruit6 when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit6))):
+                case { } orange when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Orange))):
+                case { } grape when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Grape))):
+                case { } pineapple when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Pineapple))):
+                case { } peach when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Peach))):
+                case { } pitahaya  when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Pitahaya))):
+                case { } pepper when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Pepper))):
                     return true;
                 default:
                     return false;
