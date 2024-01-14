@@ -69,10 +69,16 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.GetComponent<Button_UI>().ClickFunc = () => {
             if(_player.Coins >= Item.GetCost(itemType))
             {
-                _inventoryFunctions.AddItem(itemType);
+                if(_inventoryFunctions.AddItem(itemType))
+                {
                 _rewardHandler.addCurrency(-Item.GetCost(itemType));
                 _shopCustomer.BoughtItem(itemType);
                 Destroy(shopItemTransform.gameObject);
+                }
+                else
+                {
+                    Debug.Log("Can't purchase item");
+                }
             }
             else
             {
