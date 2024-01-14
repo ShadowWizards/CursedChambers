@@ -10,6 +10,9 @@ TagManager:
   - PauseMenu
   - HealthBar
   - Currency
+  - InteractionButtons
+  - ClickableSlots
+  - Fade
   layers:
   - Default
   - TransparentFX

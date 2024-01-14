@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 20
-  Str: 0
+  Str: 2
   Def: 0
   Speed: 5
   inventorySpace: 0
