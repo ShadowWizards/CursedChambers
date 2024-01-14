@@ -19,15 +19,15 @@ public class UI_Shop : MonoBehaviour
 
     private void Start()
     {
-        CreateItemButton(Item.ItemEnum.Fruit1, Item.GetSprite(Item.ItemEnum.Fruit1), "Orange", Item.GetCost(Item.ItemEnum.Fruit1), 0);
-        CreateItemButton(Item.ItemEnum.Fruit2, Item.GetSprite(Item.ItemEnum.Fruit2), "Grape", Item.GetCost(Item.ItemEnum.Fruit2), 1);
-        CreateItemButton(Item.ItemEnum.Fruit3, Item.GetSprite(Item.ItemEnum.Fruit3), "Pineapple", Item.GetCost(Item.ItemEnum.Fruit3), 2);
-        CreateItemButton(Item.ItemEnum.Fruit4, Item.GetSprite(Item.ItemEnum.Fruit4), "Peach", Item.GetCost(Item.ItemEnum.Fruit4), 3);
-        CreateItemButton(Item.ItemEnum.Fruit5, Item.GetSprite(Item.ItemEnum.Fruit5), "Pitahaya", Item.GetCost(Item.ItemEnum.Fruit5), 4);
-        CreateItemButton(Item.ItemEnum.Fruit6, Item.GetSprite(Item.ItemEnum.Fruit6), "Peper", Item.GetCost(Item.ItemEnum.Fruit6), 5);
-        CreateItemButton(Item.ItemEnum.Fruit6, Item.GetSprite(Item.ItemEnum.Fruit6), "Peper", Item.GetCost(Item.ItemEnum.Fruit6), 6);
-        CreateItemButton(Item.ItemEnum.Fruit6, Item.GetSprite(Item.ItemEnum.Fruit6), "Peper", Item.GetCost(Item.ItemEnum.Fruit6), 7);
-        CreateItemButton(Item.ItemEnum.Fruit6, Item.GetSprite(Item.ItemEnum.Fruit6), "Peper", Item.GetCost(Item.ItemEnum.Fruit6), 8);
+        CreateItemButton(Item.ItemEnum.Orange, Item.GetSprite(Item.ItemEnum.Orange), "Orange", Item.GetCost(Item.ItemEnum.Orange), 0);
+        CreateItemButton(Item.ItemEnum.Grape, Item.GetSprite(Item.ItemEnum.Grape), "Grape", Item.GetCost(Item.ItemEnum.Grape), 1);
+        CreateItemButton(Item.ItemEnum.Pineapple, Item.GetSprite(Item.ItemEnum.Pineapple), "Pineapple", Item.GetCost(Item.ItemEnum.Pineapple), 2);
+        CreateItemButton(Item.ItemEnum.Peach, Item.GetSprite(Item.ItemEnum.Peach), "Peach", Item.GetCost(Item.ItemEnum.Peach), 3);
+        CreateItemButton(Item.ItemEnum.Pitahaya, Item.GetSprite(Item.ItemEnum.Pitahaya), "Pitahaya", Item.GetCost(Item.ItemEnum.Pitahaya), 4);
+        CreateItemButton(Item.ItemEnum.Pepper, Item.GetSprite(Item.ItemEnum.Pepper), "Pepper", Item.GetCost(Item.ItemEnum.Pepper), 5);
+        CreateItemButton(Item.ItemEnum.Pepper, Item.GetSprite(Item.ItemEnum.Pepper), "Pepper", Item.GetCost(Item.ItemEnum.Pepper), 6);
+        CreateItemButton(Item.ItemEnum.Pepper, Item.GetSprite(Item.ItemEnum.Pepper), "Pepper", Item.GetCost(Item.ItemEnum.Pepper), 7);
+        CreateItemButton(Item.ItemEnum.Pepper, Item.GetSprite(Item.ItemEnum.Pepper), "Pepper", Item.GetCost(Item.ItemEnum.Pepper), 8);
         shopItemTemplate.gameObject.SetActive(false);
         Hide();
     }
