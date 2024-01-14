@@ -55,6 +55,20 @@ public class PlayerDamageHandler : MonoBehaviour
         // If Player is not invincible they take damage
         if(!_isInvincible)
         {
+            if (_player.Shield > 0)
+            {
+                
+                if (_player.Shield - dmg > 0)
+                {
+                    _player.Shield = _player.Shield - dmg;
+                    dmg = 0;
+                }
+                else
+                {
+                    dmg = dmg - _player.Shield;
+                    _player.Shield = 0;
+                }
+            }
             _player.Hp -= dmg;
             _invincibilityTimer = _player.invincibilityDuration;
             _isInvincible = true;

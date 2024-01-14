@@ -14,10 +14,10 @@ public class GameAssets : MonoBehaviour
         }
     }
 
-    public Sprite fruit1;
-    public Sprite fruit2;
-    public Sprite fruit3;
-    public Sprite fruit4;
-    public Sprite fruit5;
-    public Sprite fruit6;
+    public Sprite Orange;
+    public Sprite Grape;
+    public Sprite Pineapple;
+    public Sprite Peach;
+    public Sprite Pitahaya;
+    public Sprite Pepper;
 }

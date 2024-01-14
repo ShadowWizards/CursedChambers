@@ -50,10 +50,20 @@ public class InvSelecFuncs : MonoBehaviour
             return;
         }
 
-        if (!_itemToUse.IsHealing)
+        if (!_itemToUse.IsHealing && !_itemToUse.IsConsumableShield)
         {
             Debug.Log("Item cannot be used");
             return;
+        }
+
+        if (_itemToUse.IsHealing)
+        {
+            _playerClass.Hp += Item.GetHp(_itemToUse.ItemType);
+        }
+
+        if (_itemToUse.IsConsumableShield)
+        {
+            _playerClass.Shield += Item.GetShield(_itemToUse.ItemType);
         }
         
         _inventoryFunctions.RemoveItem(_itemToUse);
