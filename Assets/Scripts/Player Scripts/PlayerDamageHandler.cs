@@ -73,6 +73,7 @@ public class PlayerDamageHandler : MonoBehaviour
             _invincibilityTimer = _player.invincibilityDuration;
             _isInvincible = true;
             _healthBar.SetHealth(_player.Hp);
+            _healthBar.SetShield(_player.Shield);
 
             // Sets Player spriteRender to red, to indicate damage taken
             FlashDamage();

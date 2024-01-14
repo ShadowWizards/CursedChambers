@@ -43,9 +43,8 @@ public class EnemyDamageHandler : MonoBehaviour
             //PopUp
             popUpText.text = damage.ToString();
             Instantiate(popUpDamagePrefab, transform.position, Quaternion.identity);
-            Debug.Log(transform.position);
 
-            _invincibilityTimer = Time.time + (float)0.65;
+            _invincibilityTimer = Time.time + (float)0.4;
 
             // Knockback
             Rigidbody2D enemy = GetComponent<Rigidbody2D>();

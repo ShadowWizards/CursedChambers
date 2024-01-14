@@ -17,6 +17,7 @@ public class InvSelecFuncs : MonoBehaviour
     private PlayerInventoryFunctions _inventoryFunctions;
 
     private Item _itemToUse;
+    private HealthBar _healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class InvSelecFuncs : MonoBehaviour
         _inventoryFunctions = _playerClass.GetComponent<PlayerInventoryFunctions>();
         _interactionButtons = GameObject.FindGameObjectWithTag("InteractionButtons");
         _interactionButtons.SetActive(false);
+        _healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
     }
 
     // Update is called once per frame
@@ -59,11 +61,13 @@ public class InvSelecFuncs : MonoBehaviour
         if (_itemToUse.IsHealing)
         {
             _playerClass.Hp += Item.GetHp(_itemToUse.ItemType);
+            _healthBar.SetHealth(_playerClass.Hp);
         }
 
         if (_itemToUse.IsConsumableShield)
         {
             _playerClass.Shield += Item.GetShield(_itemToUse.ItemType);
+            _healthBar.SetShield(_playerClass.Shield);
         }
         
         _inventoryFunctions.RemoveItem(_itemToUse);
