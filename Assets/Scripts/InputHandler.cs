@@ -8,7 +8,7 @@ public class InputHandler : MonoBehaviour
 {
     private Player _playerClass;
     private PlayerInventoryFunctions _inventoryFunctions;
-    public PauseMenu _pauseMenu;
+    private PauseMenu _pauseMenu;
     // Start is called before the first frame update
     void Start()
     {

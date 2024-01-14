@@ -12,13 +12,14 @@ public class PlayerDamageHandler : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private float _flashDuration = 0.15f;
     private float _flashTimer;
-
+    private HealthBar _healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _player = GetComponent<Player>();
+        _healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
     }
     
     // Update is called once per frame
@@ -67,6 +68,7 @@ public class PlayerDamageHandler : MonoBehaviour
             _player.Hp -= dmg;
             _invincibilityTimer = _player.invincibilityDuration;
             _isInvincible = true;
+            _healthBar.SetHealth(_player.Hp);
 
             // Sets Player spriteRender to red, to indicate damage taken
             FlashDamage();

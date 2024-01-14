@@ -19,12 +19,15 @@ public class UI_Shop : MonoBehaviour
 
     private void Start()
     {
-        CreateItemButton(Item.ItemEnum.Orange, Item.GetSprite(Item.ItemEnum.Orange), "Orange", Item.GetCost(Item.ItemEnum.Orange), 0);
-        CreateItemButton(Item.ItemEnum.Grape, Item.GetSprite(Item.ItemEnum.Grape), "Grape", Item.GetCost(Item.ItemEnum.Grape), 1);
-        CreateItemButton(Item.ItemEnum.Pineapple, Item.GetSprite(Item.ItemEnum.Pineapple), "Pineapple", Item.GetCost(Item.ItemEnum.Pineapple), 2);
-        CreateItemButton(Item.ItemEnum.Peach, Item.GetSprite(Item.ItemEnum.Peach), "Peach", Item.GetCost(Item.ItemEnum.Peach), 3);
-        CreateItemButton(Item.ItemEnum.Pitahaya, Item.GetSprite(Item.ItemEnum.Pitahaya), "Pitahaya", Item.GetCost(Item.ItemEnum.Pitahaya), 4);
-        CreateItemButton(Item.ItemEnum.Pepper, Item.GetSprite(Item.ItemEnum.Pepper), "Peper", Item.GetCost(Item.ItemEnum.Pepper), 5);
+        CreateItemButton(Item.ItemEnum.Fruit1, Item.GetSprite(Item.ItemEnum.Fruit1), "Orange", Item.GetCost(Item.ItemEnum.Fruit1), 0);
+        CreateItemButton(Item.ItemEnum.Fruit2, Item.GetSprite(Item.ItemEnum.Fruit2), "Grape", Item.GetCost(Item.ItemEnum.Fruit2), 1);
+        CreateItemButton(Item.ItemEnum.Fruit3, Item.GetSprite(Item.ItemEnum.Fruit3), "Pineapple", Item.GetCost(Item.ItemEnum.Fruit3), 2);
+        CreateItemButton(Item.ItemEnum.Fruit4, Item.GetSprite(Item.ItemEnum.Fruit4), "Peach", Item.GetCost(Item.ItemEnum.Fruit4), 3);
+        CreateItemButton(Item.ItemEnum.Fruit5, Item.GetSprite(Item.ItemEnum.Fruit5), "Pitahaya", Item.GetCost(Item.ItemEnum.Fruit5), 4);
+        CreateItemButton(Item.ItemEnum.Fruit6, Item.GetSprite(Item.ItemEnum.Fruit6), "Peper", Item.GetCost(Item.ItemEnum.Fruit6), 5);
+        CreateItemButton(Item.ItemEnum.Fruit6, Item.GetSprite(Item.ItemEnum.Fruit6), "Peper", Item.GetCost(Item.ItemEnum.Fruit6), 6);
+        CreateItemButton(Item.ItemEnum.Fruit6, Item.GetSprite(Item.ItemEnum.Fruit6), "Peper", Item.GetCost(Item.ItemEnum.Fruit6), 7);
+        CreateItemButton(Item.ItemEnum.Fruit6, Item.GetSprite(Item.ItemEnum.Fruit6), "Peper", Item.GetCost(Item.ItemEnum.Fruit6), 8);
         shopItemTemplate.gameObject.SetActive(false);
         Hide();
     }
@@ -34,8 +37,19 @@ public class UI_Shop : MonoBehaviour
         Transform shopItemTransform = Instantiate(shopItemTemplate, container);
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
 
-        float shopItemHeight = 55f;
-        shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
+        
+        float shopItemHeight = 0f;
+        float shopItemWidth = 147f * (positionIndex % 3);
+
+        if(positionIndex == 0 || positionIndex == 1 || positionIndex == 2)
+            shopItemHeight = 0f;
+        else if(positionIndex == 3 || positionIndex == 4 || positionIndex == 5)
+            shopItemHeight = 240f;
+        else
+            shopItemHeight = 480f;
+
+        
+        shopItemRectTransform.anchoredPosition = new Vector2(shopItemWidth, -shopItemHeight);
 
         shopItemTransform.Find("nameText").GetComponent<TextMeshProUGUI>().SetText(itemName);
         shopItemTransform.Find("costText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
