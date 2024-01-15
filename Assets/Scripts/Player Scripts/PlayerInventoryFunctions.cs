@@ -124,9 +124,9 @@ namespace Player_Scripts
         // It will make sure that any left over removed Items will not be displayed
         public void ReOrganizeSlots()
         {
+            HideClickableSlots();
             if (_playerClass.inventory.Count == 0)
             {
-                HideClickableSlots();
                 return;
             }
             _invCanvasChildren = _invCanvas.transform.childCount;
@@ -135,7 +135,6 @@ namespace Player_Scripts
             foreach (var item in _playerClass.inventory)
             {
                 RemoveInvEntry(item);
-                HideClickableSlots();
                 GameObject itemFrame = new GameObject($"Slot {_invSlotAdd}");
                 item.Slot = $"Slot {_invSlotAdd}";
                 _clickableSlots.transform.Find($"Slot {_invSlotAdd}").gameObject.SetActive(true);
