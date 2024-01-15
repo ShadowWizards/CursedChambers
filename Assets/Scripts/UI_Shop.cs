@@ -2,15 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static System.Net.Mime.MediaTypeNames;
 using CodeMonkey.Utils;
 using Player_Scripts;
 using Assets.Scripts.Classes;
-using System.Threading;
-using System;
-using System.Linq;
 using Random=UnityEngine.Random;
-using UnityEditor.Playables;
 
 
 public class UI_Shop : MonoBehaviour
@@ -32,10 +27,16 @@ public class UI_Shop : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < 9; i++)
+        for(int i = 0; i < 3; i++)
         {
             // Gets a random item from ItemEnum, first 6 items are fruits and the rest are normal items in total 40 items
             Item.ItemEnum currentItem = (Item.ItemEnum)Random.Range(0, 6);
+            CreateItemButton(currentItem, Item.GetSprite(currentItem), Item.GetName(currentItem), Item.GetCost(currentItem), i);
+        }
+        for(int i = 3; i < 9; i++)
+        {
+            // Gets a random item from ItemEnum, first 6 items are fruits and the rest are normal items in total 40 items
+            Item.ItemEnum currentItem = (Item.ItemEnum)Random.Range(6, 40);
             CreateItemButton(currentItem, Item.GetSprite(currentItem), Item.GetName(currentItem), Item.GetCost(currentItem), i);
         }
         _shopItemTemplate.gameObject.SetActive(false);

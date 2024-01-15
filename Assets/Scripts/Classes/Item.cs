@@ -127,6 +127,36 @@ public class Item : MonoBehaviour
         case ItemEnum.Peach:       return GameAssets.i.Peach;
         case ItemEnum.Pitahaya:       return GameAssets.i.Pitahaya;
         case ItemEnum.Pepper:       return GameAssets.i.Pepper;
+        case ItemEnum.ArmourBrown: return GameAssets.i.ArmourBrown;
+        case ItemEnum.ArmourSilver: return GameAssets.i.ArmourSilver;
+        case ItemEnum.ArmourBlue: return GameAssets.i.ArmourBlue;
+        case ItemEnum.ArmourYellow: return GameAssets.i.ArmourYellow;
+        case ItemEnum.ArmourRed: return GameAssets.i.ArmourRed;
+        case ItemEnum.BootsBrown: return GameAssets.i.BootsBrown;
+        case ItemEnum.BootsSilver: return GameAssets.i.BootsSilver;
+        case ItemEnum.BootsBlue: return GameAssets.i.BootsBlue;
+        case ItemEnum.BootsYellow: return GameAssets.i.BootsYellow;
+        case ItemEnum.BootsRed: return GameAssets.i.BootsRed;
+        case ItemEnum.GlovesBrown: return GameAssets.i.GlovesBrown;
+        case ItemEnum.GlovesSilver: return GameAssets.i.GlovesSilver;
+        case ItemEnum.GlovesBlue: return GameAssets.i.GlovesBlue;
+        case ItemEnum.GlovesYellow: return GameAssets.i.GlovesYellow;
+        case ItemEnum.GlovesRed: return GameAssets.i.GlovesRed;
+        case ItemEnum.HatBrown: return GameAssets.i.HatBrown;
+        case ItemEnum.HatSilver: return GameAssets.i.HatSilver;
+        case ItemEnum.HatBlue: return GameAssets.i.HatBlue;
+        case ItemEnum.HatYellow: return GameAssets.i.HatYellow;
+        case ItemEnum.HatRed: return GameAssets.i.HatRed;
+        case ItemEnum.HelmetBrown: return GameAssets.i.HelmetBrown;
+        case ItemEnum.HelmetSilver: return GameAssets.i.HelmetSilver;
+        case ItemEnum.HelmetBlue: return GameAssets.i.HelmetBlue;
+        case ItemEnum.HelmetYellow: return GameAssets.i.HelmetYellow;
+        case ItemEnum.HelmetRed: return GameAssets.i.HelmetRed;
+        case ItemEnum.SwordBrown: return GameAssets.i.SwordBrown;
+        case ItemEnum.SwordSilverAndYellow: return GameAssets.i.SwordSilverAndYellow;
+        case ItemEnum.SwordSilverAndBlack: return GameAssets.i.SwordSilverAndBlack;
+        case ItemEnum.SwordYellow: return GameAssets.i.SwordYellow;
+        case ItemEnum.SwordRed: return GameAssets.i.SwordRed;
         }
     }
 

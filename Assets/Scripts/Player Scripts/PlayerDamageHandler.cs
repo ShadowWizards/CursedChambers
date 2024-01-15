@@ -13,6 +13,7 @@ public class PlayerDamageHandler : MonoBehaviour
     private float _flashDuration = 0.15f;
     private float _flashTimer;
     private HealthBar _healthBar;
+    public FadeInOut fade;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class PlayerDamageHandler : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _player = GetComponent<Player>();
         _healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
+        fade = GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeInOut>();
     }
     
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class PlayerDamageHandler : MonoBehaviour
         {
             _invincibilityTimer -= Time.deltaTime;
         }
-        else if(_isInvincible)
+        else if(_isInvincible && _player.isAlive)
         {
             _isInvincible = false;
         }
@@ -88,7 +90,8 @@ public class PlayerDamageHandler : MonoBehaviour
 
     public void Kill()
     {
-        Time.timeScale = 0f;
+        _player.isAlive = false;
+        fade.DeathScreen();
         //Destroy(_player.gameObject);
     }
 

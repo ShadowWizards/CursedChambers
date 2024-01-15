@@ -21,6 +21,10 @@ public class InputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!_playerClass.isAlive)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             _pauseMenu.PauseGame();

@@ -18,6 +18,7 @@ namespace Assets.Scripts.Classes
         public float playerCooldown;
         public int Coins;
         public int Score;
+        public bool isAlive;
         public List<Item> inventory = new List<Item>();
         public Buff[] buffs;
         public Debuff[] debuffs;

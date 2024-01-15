@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 0f)
+        if (!_player.isAlive)
         {
             return;
         }
@@ -92,6 +92,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!_player.isAlive)
+        {
+            return;
+        }
         // horizontal and vertical are the current input Axis of the player
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
