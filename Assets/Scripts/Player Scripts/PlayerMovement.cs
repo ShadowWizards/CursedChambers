@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _playerRigidBody;
     private Player _player;
     private Vector2 _moveInput;
+    private Vector2 _moveDir;
     private Vector2 _playerXVelocity;
     private Vector2 _playerYVelocity;
     private Animator _animator;
@@ -95,48 +96,8 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        // Checks for wether current movement is on the horizontal or vertical axiss
-        bool isMovingHorizontal = Mathf.Abs(horizontal) > 0.5f;
-        bool isMovingVertical = Mathf.Abs(vertical) > 0.5f;
+        _moveDir = new Vector2(horizontal, vertical).normalized;
 
-        // the velocity that will be assigned to the player depending on which input axis they are
-        _playerXVelocity = new Vector2(horizontal * _actualSpeed, 0);
-        _playerYVelocity = new Vector2(0, vertical * _actualSpeed);
-
-        // In case two buttons are pressed at the same time set priority of movement to the last key pressed
-        if (isMovingHorizontal && isMovingVertical)
-        {
-            switch (_lastKeyPressed)
-            {
-                case KeyCode.W:
-                    _playerRigidBody.velocity = _playerYVelocity;
-                    break;
-                case KeyCode.S:
-                    _playerRigidBody.velocity = _playerYVelocity;
-                    break;
-                case KeyCode.D:
-                    _playerRigidBody.velocity = _playerXVelocity;
-                    break;
-                case KeyCode.A:
-                    _playerRigidBody.velocity = _playerXVelocity;
-                    break;
-            }
-        }
-        // If moving on the vertical input axis
-        else if (isMovingVertical)
-        {
-            _animator.SetFloat("Vertical", _moveInput.y);
-            _playerRigidBody.velocity = _playerYVelocity;
-        }
-        // If moving on the horizontal input axis
-        else if (isMovingHorizontal)
-        {
-            _animator.SetFloat("Horizontal", _moveInput.x);
-            _playerRigidBody.velocity = _playerXVelocity;
-        }
-        else
-        {
-            _playerRigidBody.velocity = Vector2.zero;
-        }
+        _playerRigidBody.velocity = new Vector2(_moveDir.x * _actualSpeed, _moveDir.y * _actualSpeed);
     }
 }

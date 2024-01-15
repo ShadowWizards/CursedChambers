@@ -32,7 +32,7 @@ namespace Player_Scripts
         }
 
         // Add Item to the player's Inventory
-        public void AddItem(Item.ItemEnum itemType)
+        public bool AddItem(Item.ItemEnum itemType)
         {
             // Get the amount of items already existing in the Inventory Canvas
             _invCanvasChildren = _invCanvas.transform.childCount;
@@ -49,16 +49,19 @@ namespace Player_Scripts
             if (HealingItemExists() && item.IsHealing)
             {
                 Debug.Log("You already have a healing item");
+                return false;
             }
             else if (itemExists)
             {
                 Debug.Log("You already have this item");
+                return false;
             }
             else
             {
                 _playerClass.inventory.Add(item);
 
                 GenerateInvEntries();
+                return true;
             }
         }
 
