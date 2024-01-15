@@ -8,6 +8,7 @@ public class ExitControl : MonoBehaviour
     private GameObject _player;
     private GameObject _UI;
     private Transform container;
+    public FadeInOut fade;
     private bool isInRange = false;
     public int sceneBuildIndex;
 
@@ -16,6 +17,7 @@ public class ExitControl : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
         _UI = GameObject.Find("UI");
         container = transform.Find("ExitContainer");
+        fade = GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeInOut>();
         container.gameObject.SetActive(false);
     }
 
@@ -30,6 +32,10 @@ public class ExitControl : MonoBehaviour
 
     IEnumerator LoadYourAsyncScene()
     {
+        // First fade in
+        fade.FadeIn();
+        yield return new WaitForSeconds(1);
+
         // Set the current Scene to be able to unload it later
         Scene currentScene = SceneManager.GetActiveScene();
 
@@ -51,6 +57,9 @@ public class ExitControl : MonoBehaviour
 
         // Change player position to the start
         _player.transform.position = new Vector2(0f ,0f);
+
+        // After everything is loaded fade out
+        fade.FadeOut();
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {

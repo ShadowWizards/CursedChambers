@@ -8,14 +8,10 @@ public class RandomSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // Selects a random number between how many enemy prefabs there are
         int randEnemy = Random.Range(0, enemyPrefabs.Length);
 
+        // Spawns the enemy on the transform location
         Instantiate(enemyPrefabs[randEnemy], transform.position, transform.rotation);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

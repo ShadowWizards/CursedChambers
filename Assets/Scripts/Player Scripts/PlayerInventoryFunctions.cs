@@ -12,57 +12,76 @@ namespace Player_Scripts
     {
 
         private int _invCanvasChildren;
+        private GameObject _inventoryGameObject;
+        private GameObject _invCanvas;
         private int _invSlotAdd;
         private Vector2 _invCanvasPos;
+        private Player _playerClass;
+        private GameObject _clickableSlots;
+
+        private void Start()
+        {
+            _playerClass = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            _invCanvas = GameObject.FindGameObjectWithTag("Inventory_Canvas");
+            _inventoryGameObject = GameObject.FindGameObjectWithTag("Inventory");
+            _clickableSlots = GameObject.FindGameObjectWithTag("ClickableSlots");
+
+            HideClickableSlots();
+            
+            _inventoryGameObject.SetActive(false);
+        }
 
         // Add Item to the player's Inventory
-        public void AddItem(Item.ItemEnum itemType, GameObject invCanvas,Player playerClass)
+        public bool AddItem(Item.ItemEnum itemType)
         {
             // Get the amount of items already existing in the Inventory Canvas
-            _invCanvasChildren = invCanvas.transform.childCount;
+            _invCanvasChildren = _invCanvas.transform.childCount;
             
             // Create Item Object
-            Item item = invCanvas.AddComponent<Item>();
+            Item item = _invCanvas.AddComponent<Item>();
             item.ItemType = itemType;
-            item.InvEntry = $"slot{_invCanvasChildren + 1}";
+            item.Slot = $"Slot {_invCanvasChildren + 1}";
             
             // A check if the item already exists in the player's inventory
-            bool itemExists = ItemExists(itemType,playerClass.inventory);
+            bool itemExists = ItemExists(item);
             
             // Making sure the item doesn't already exist, and that there are no more than 1 healing items
-            if (HealingItemExists(playerClass.inventory) && item.IsHealing)
+            if (HealingItemExists() && item.IsHealing)
             {
                 Debug.Log("You already have a healing item");
+                return false;
             }
             else if (itemExists)
             {
                 Debug.Log("You already have this item");
+                return false;
             }
             else
             {
-                playerClass.inventory.Add(item);
+                _playerClass.inventory.Add(item);
 
-                GenerateInvEntries(playerClass.inventory,invCanvas);
+                GenerateInvEntries();
+                return true;
             }
         }
 
         // Remove Item from the Player's Inventory
-        public void RemoveItem(Item.ItemEnum itemType,GameObject invCanvas ,Player playerClass)
+        public void RemoveItem(Item item)
         {
             // Making sure the inventory is not empty
-            if (playerClass.inventory.Count == 0)
+            if (_playerClass.inventory.Count == 0)
             {
                 return;
             }
 
             // Getting the Item object from the Inventory
-            Item item = playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(itemType));
+            //Item item = _playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(itemType));
 
-            if (ItemExists(itemType, playerClass.inventory))
+            if (ItemExists(item))
             {
-                playerClass.inventory.Remove(item);
+                _playerClass.inventory.Remove(item);
                 RemoveInvEntry(item);
-                ReOrganizeSlots(playerClass.inventory, invCanvas);
+                ReOrganizeSlots();
                 Debug.Log("Item removed");
             }
             else
@@ -72,12 +91,12 @@ namespace Player_Scripts
         }
 
         // A simple check if the Item already exists in the Player's Inventory
-        public bool ItemExists(Item.ItemEnum itemType, List<Item> inventory)
+        public bool ItemExists(Item item)
         {
             
-            switch (inventory)
+            switch (_playerClass.inventory)
             {
-                case { } items when inventory.Contains(inventory.FirstOrDefault(x => x.ItemType.Equals(itemType))):
+                case { } items when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(item.ItemType))):
                     return true;
             }
 
@@ -85,16 +104,16 @@ namespace Player_Scripts
         }
 
         // A check if the item chosen to be checked is a healing one
-        public bool HealingItemExists(List<Item> inventory)
+        public bool HealingItemExists()
         {
-            switch (inventory)
+            switch (_playerClass.inventory)
             {
-                case { } fruit1 when inventory.Contains(inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit1))):
-                case { } fruit2 when inventory.Contains(inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit2))):
-                case { } fruit3 when inventory.Contains(inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit3))):
-                case { } fruit4 when inventory.Contains(inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit4))):
-                case { } fruit5 when inventory.Contains(inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit5))):
-                case { } fruit6 when inventory.Contains(inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Fruit6))):
+                case { } orange when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Orange))):
+                case { } grape when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Grape))):
+                case { } pineapple when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Pineapple))):
+                case { } peach when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Peach))):
+                case { } pitahaya  when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Pitahaya))):
+                case { } pepper when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Pepper))):
                     return true;
                 default:
                     return false;
@@ -103,30 +122,32 @@ namespace Player_Scripts
 
         // This will reorganize the whole Inventory, meaning that it will re-render all the items
         // It will make sure that any left over removed Items will not be displayed
-        public void ReOrganizeSlots(List<Item> inventory,GameObject invCanvas)
+        public void ReOrganizeSlots()
         {
-            if (inventory.Count == 0)
+            if (_playerClass.inventory.Count == 0)
             {
+                HideClickableSlots();
                 return;
             }
-            _invCanvasChildren = invCanvas.transform.childCount;
+            _invCanvasChildren = _invCanvas.transform.childCount;
             _invSlotAdd = 1;
             
-            foreach (var item in inventory)
+            foreach (var item in _playerClass.inventory)
             {
                 RemoveInvEntry(item);
-                
-                GameObject itemFrame = new GameObject($"slot{_invSlotAdd}");
-                item.InvEntry = $"slot{_invSlotAdd}";
+                HideClickableSlots();
+                GameObject itemFrame = new GameObject($"Slot {_invSlotAdd}");
+                item.Slot = $"Slot {_invSlotAdd}";
+                _clickableSlots.transform.Find($"Slot {_invSlotAdd}").gameObject.SetActive(true);
                 Image image =  itemFrame.AddComponent<Image>();
                 image.sprite = Item.GetSprite(item.ItemType);
                 image.color = Color.white;
                 
                 RectTransform rectTransform = itemFrame.GetComponent<RectTransform>();
                 rectTransform.sizeDelta = new Vector2(95, 95);
-                rectTransform.localPosition = GetInvSlotPosition(_invSlotAdd,invCanvas);
+                rectTransform.localPosition = GetInvSlotPosition(_invSlotAdd);
                 
-                itemFrame.transform.SetParent(invCanvas.transform);
+                itemFrame.transform.SetParent(_invCanvas.transform);
                 _invSlotAdd++;
             }
            
@@ -135,42 +156,43 @@ namespace Player_Scripts
         // Removes the visual entry of an Item in the Inventory
         public void RemoveInvEntry(Item item)
         {
-            GameObject slotToRemove = GameObject.Find(item.InvEntry);
+            GameObject slotToRemove = GameObject.Find(item.Slot);
             Destroy(slotToRemove);
         }
         
         // This function will generate new entries to the player Inventory
         // It is better to call this function rather than "ReOrganizeSlots",when adding new items
         // since this one will only add new entries and not re-enter and re-render all items
-        public void GenerateInvEntries(List<Item> inventory, GameObject invCanvas)
+        public void GenerateInvEntries()
         {
             
-            if (inventory.Count == 0)
+            if (_playerClass.inventory.Count == 0)
             {
                 return;
             }
-            _invCanvasChildren = invCanvas.transform.childCount;
+            _invCanvasChildren = _invCanvas.transform.childCount;
             _invSlotAdd = _invCanvasChildren + 1;
             
-            if (_invCanvasChildren == inventory.Count)
+            if (_invCanvasChildren == _playerClass.inventory.Count)
             {
                 Debug.Log("All items are generated");
                 return;
             }
             
-            for (int i = 0; i < inventory.Count - _invCanvasChildren; i++)
+            for (int i = 0; i < _playerClass.inventory.Count - _invCanvasChildren; i++)
             {
-                GameObject itemFrame = new GameObject($"slot{_invSlotAdd}");
-                inventory[_invCanvasChildren].InvEntry = $"slot{_invSlotAdd}";
+                GameObject itemFrame = new GameObject($"Slot {_invSlotAdd}");
+                _playerClass.inventory[_invCanvasChildren].Slot = $"Slot {_invSlotAdd}";
+                _clickableSlots.transform.Find($"Slot {_invSlotAdd}").gameObject.SetActive(true);
                 Image image =  itemFrame.AddComponent<Image>();
-                image.sprite = Item.GetSprite(inventory[_invCanvasChildren].ItemType);
+                image.sprite = Item.GetSprite(_playerClass.inventory[_invCanvasChildren].ItemType);
                 image.color = Color.white;
                 
                 RectTransform rectTransform = itemFrame.GetComponent<RectTransform>();
                 rectTransform.sizeDelta = new Vector2(95, 95);
-                rectTransform.localPosition = GetInvSlotPosition(_invSlotAdd,invCanvas);
+                rectTransform.localPosition = GetInvSlotPosition(_invSlotAdd);
                 
-                itemFrame.transform.SetParent(invCanvas.transform);
+                itemFrame.transform.SetParent(_invCanvas.transform);
                 _invSlotAdd++;
             }
             
@@ -178,9 +200,9 @@ namespace Player_Scripts
         }
         
         // This function will return the exact position of each Inventory slot
-        public Vector2 GetInvSlotPosition(int invSlot, GameObject invCanvas)
+        public Vector2 GetInvSlotPosition(int invSlot)
         {
-            _invCanvasPos = invCanvas.transform.position;
+            _invCanvasPos = _invCanvas.transform.position;
             switch (invSlot)
             {
                 case 1:
@@ -203,6 +225,28 @@ namespace Player_Scripts
                     return new Vector2(_invCanvasPos.x + 148, _invCanvasPos.y + -278);
                 default:
                     return new Vector2(0, 0);
+            }
+        }
+
+        public void OpenInventory()
+        {
+            if (!_inventoryGameObject.activeSelf)
+            {
+                _inventoryGameObject.SetActive(true);
+                GenerateInvEntries();
+            }
+            else
+            {
+                _inventoryGameObject.SetActive(false);
+            }
+        }
+
+        public void HideClickableSlots()
+        {
+            foreach (Transform child in _clickableSlots.transform)
+            {
+                child.gameObject.SetActive(false);
+                
             }
         }
         
