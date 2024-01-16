@@ -10,7 +10,6 @@ using System.Threading;
 using System;
 using System.Linq;
 using Random=UnityEngine.Random;
-using UnityEditor.Playables;
 
 
 public class UI_Shop : MonoBehaviour
