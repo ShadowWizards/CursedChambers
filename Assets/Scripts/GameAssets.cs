@@ -20,6 +20,10 @@ public class GameAssets : MonoBehaviour
     public Sprite Peach;
     public Sprite Pitahaya;
     public Sprite Pepper;
+    public Sprite FlaskGreen;
+    public Sprite FlaskRed;
+    public Sprite FlaskPurple;
+    public Sprite FlaskOrange;
     public Sprite ArmourBrown;
     public Sprite ArmourSilver;
     public Sprite ArmourBlue;
@@ -50,4 +54,5 @@ public class GameAssets : MonoBehaviour
     public Sprite SwordSilverAndBlack;
     public Sprite SwordYellow;
     public Sprite SwordRed;
+    public Sprite Error;
 }

@@ -50,6 +50,10 @@ MonoBehaviour:
   Peach: {fileID: 21300000, guid: a50f6b6cf40728e40910a8c3e4be5b92, type: 3}
   Pitahaya: {fileID: 21300000, guid: 0b30121651bd5ed4ba1a4d8917be3f33, type: 3}
   Pepper: {fileID: 21300000, guid: d78fe21b3ce4b7e48a8e1864ff5b208f, type: 3}
+  FlaskGreen: {fileID: 21300000, guid: 53bad27e32b56c34298073e143f354ff, type: 3}
+  FlaskRed: {fileID: 21300000, guid: 51d399af416905346ba1c36096d2804c, type: 3}
+  FlaskPurple: {fileID: 21300000, guid: 939b783d5723c7b4ab4a9a7c71070bab, type: 3}
+  FlaskOrange: {fileID: 21300000, guid: 2050a2cb51acee94aac463f153af6512, type: 3}
   ArmourBrown: {fileID: -992754372, guid: b85364f9fd7c7c641a112651843b5a00, type: 3}
   ArmourSilver: {fileID: -1785570557, guid: b85364f9fd7c7c641a112651843b5a00, type: 3}
   ArmourBlue: {fileID: -2113630050, guid: b85364f9fd7c7c641a112651843b5a00, type: 3}
@@ -80,3 +84,4 @@ MonoBehaviour:
   SwordSilverAndBlack: {fileID: 7794244, guid: 1c4fbdf5ff1767b4a966f7197ae1fdae, type: 3}
   SwordYellow: {fileID: 1326978433, guid: 1c4fbdf5ff1767b4a966f7197ae1fdae, type: 3}
   SwordRed: {fileID: -1865713693, guid: 1c4fbdf5ff1767b4a966f7197ae1fdae, type: 3}
+  Error: {fileID: 21300000, guid: 7e89c64ea84ba2249adb83ddb0067edb, type: 3}

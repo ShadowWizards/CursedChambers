@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Classes;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DeathHandler : MonoBehaviour
@@ -9,12 +10,16 @@ public class DeathHandler : MonoBehaviour
     private Animator _animator;
     private Player _player;
     private Rigidbody2D _playerRigidBody;
+    private GameObject _shop;
+    private GameObject _inventory;
     // Start is called before the first frame update
     void Start()
     {
         deathScreen = GameObject.Find("UI_DeathScreen");
         _animator = GameObject.Find("DeathText").GetComponent<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        _shop = GameObject.Find("Shop");
+        _inventory = GameObject.FindGameObjectWithTag("Inventory");
         _playerRigidBody = _player.GetComponent<Rigidbody2D>();
         deathScreen.SetActive(false);
     }
@@ -32,8 +37,8 @@ public class DeathHandler : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetFloat("Speed", 0);
 
         // Turns off inventory UI and Shop UI
-        GameObject.Find("UI_Inventory").SetActive(false);
-        GameObject.Find("Shop").SetActive(false);
+        _shop.SetActive(false);
+        _inventory.SetActive(false);
 
         // Stops player from continuing movement after death
         _playerRigidBody.velocity = new Vector2(0, 0);

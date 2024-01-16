@@ -104,6 +104,7 @@ public class Item : MonoBehaviour
        SwordSilverAndBlack,
        SwordYellow,
        SwordRed,
+       Error,
     }
 
     public static int GetCost(ItemEnum itemType) {
@@ -120,13 +121,17 @@ public class Item : MonoBehaviour
 
     public static Sprite GetSprite(ItemEnum itemType) {
         switch (itemType) {
-        default:
+        default: return GameAssets.i.Error;
         case ItemEnum.Orange:       return GameAssets.i.Orange;
         case ItemEnum.Grape:        return GameAssets.i.Grape;
         case ItemEnum.Pineapple:       return GameAssets.i.Pineapple;
         case ItemEnum.Peach:       return GameAssets.i.Peach;
         case ItemEnum.Pitahaya:       return GameAssets.i.Pitahaya;
         case ItemEnum.Pepper:       return GameAssets.i.Pepper;
+        case ItemEnum.FlaskGreen:     return GameAssets.i.FlaskGreen;
+        case ItemEnum.FlaskRed:     return GameAssets.i.FlaskRed;
+        case ItemEnum.FlaskPurple:     return GameAssets.i.FlaskPurple;
+        case ItemEnum.FlaskOrange:     return GameAssets.i.FlaskOrange;
         case ItemEnum.ArmourBrown: return GameAssets.i.ArmourBrown;
         case ItemEnum.ArmourSilver: return GameAssets.i.ArmourSilver;
         case ItemEnum.ArmourBlue: return GameAssets.i.ArmourBlue;
@@ -232,6 +237,60 @@ public class Item : MonoBehaviour
             case ItemEnum.SwordSilverAndBlack: return "Silver and Black Sword";
             case ItemEnum.SwordYellow: return "Yellow Sword";
             case ItemEnum.SwordRed: return "Red Sword";
+        }
+    }
+    public static int GetChance(ItemEnum itemType)
+    {
+        switch (itemType)
+        {
+            default:                            return 0;
+            case ItemEnum.Orange:               return 100;
+            case ItemEnum.Grape:                return 70;
+            case ItemEnum.Pineapple:            return 50;
+            case ItemEnum.Peach:                return 30;
+            case ItemEnum.Pitahaya:             return 20;
+            case ItemEnum.Pepper:               return 20;
+
+            case ItemEnum.FlaskGreen:           return 10;
+            case ItemEnum.FlaskRed:             return 10;
+            case ItemEnum.FlaskPurple:          return 10;
+            case ItemEnum.FlaskOrange:          return 10;
+
+            case ItemEnum.ArmourBrown:          return 100;
+            case ItemEnum.ArmourSilver:         return 70;
+            case ItemEnum.ArmourBlue:           return 50;
+            case ItemEnum.ArmourYellow:         return 30;
+            case ItemEnum.ArmourRed:            return 10;
+
+            case ItemEnum.BootsBrown:           return 100;
+            case ItemEnum.BootsSilver:          return 70;
+            case ItemEnum.BootsBlue:            return 50;
+            case ItemEnum.BootsYellow:          return 30;
+            case ItemEnum.BootsRed:             return 10;
+
+            case ItemEnum.GlovesBrown:          return 100;
+            case ItemEnum.GlovesSilver:         return 70;
+            case ItemEnum.GlovesBlue:           return 50;
+            case ItemEnum.GlovesYellow:         return 30;
+            case ItemEnum.GlovesRed:            return 10;
+
+            case ItemEnum.HatBrown:             return 100;
+            case ItemEnum.HatSilver:            return 70;
+            case ItemEnum.HatBlue:              return 50;
+            case ItemEnum.HatYellow:            return 30;
+            case ItemEnum.HatRed:               return 10;
+
+            case ItemEnum.HelmetBrown:          return 100;
+            case ItemEnum.HelmetSilver:         return 70;
+            case ItemEnum.HelmetBlue:           return 50;
+            case ItemEnum.HelmetYellow:         return 30;
+            case ItemEnum.HelmetRed:            return 10;
+
+            case ItemEnum.SwordBrown:           return 100;
+            case ItemEnum.SwordSilverAndYellow: return 70;
+            case ItemEnum.SwordSilverAndBlack:  return 50;
+            case ItemEnum.SwordYellow:          return 30;
+            case ItemEnum.SwordRed:             return 10;
         }
     }
 }
