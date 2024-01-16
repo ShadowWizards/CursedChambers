@@ -10,8 +10,9 @@ public class EnemyMovment : MonoBehaviour
     private Enemy _enemy;
     private Transform _player;
     private float _distance;
-    private bool _playerFound = false;
-    private float _detectionRange = 5;
+    private bool _followPlayer = false;
+    public float detectionRange = 5;
+    public float giveUpRange = 10;
 
     void Start()
     {
@@ -24,19 +25,23 @@ public class EnemyMovment : MonoBehaviour
 
     void Update()
     {
-        // The enemy keeps checking the distance between it and the player until it reaches the detection range, then follows the player
-        if(!_playerFound)
+        _distance = Vector2.Distance(_player.position, transform.position);
+
+        // The enemy keeps checking the distance between it and the player until it reaches the detection range, then follows the player until it goes out of range
+        if(!_followPlayer)
         {
-            _distance = Vector2.Distance(_player.position, transform.position);
-            
-            if(_distance <= _detectionRange)
+            if(_distance <= detectionRange)
             {
-                _playerFound = true;
+                _followPlayer = true;
             }
         }
         else
         {
             MoveTowardsPlayer();
+            if(_distance >= giveUpRange)
+            {
+                _followPlayer = false;
+            }
         }
     }
 
