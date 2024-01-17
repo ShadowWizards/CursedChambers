@@ -10,6 +10,7 @@ namespace Assets.Scripts.Classes
     public class Player : MonoBehaviour, IShopCustomer
     {
         public float Hp;
+        public float MaxHp;
         public float Str;
         public float Shield;
         public float Speed;
