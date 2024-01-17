@@ -16,7 +16,12 @@ public class DeathHandler : MonoBehaviour
         _animator = GameObject.Find("DeathText").GetComponent<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _playerRigidBody = _player.GetComponent<Rigidbody2D>();
-        deathScreen.SetActive(false);
+    }
+
+    void OnGUI()
+    {
+        if(_player.isAlive)
+            deathScreen.SetActive(false);
     }
 
     public void playerIsDead()

@@ -312,5 +312,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e4e91f5b7b9db7847abff0a949569922, type: 3}
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: ea08a870b6a35464ca1e013df9491c69, type: 3}
+  - name: PlayerHit
+    clip: {fileID: 8300000, guid: 891963f54efd3514c95f905ed88b4cc8, type: 3}
   musicSource: {fileID: 848391659039572375}
   sfxSource: {fileID: 8481380928928467541}

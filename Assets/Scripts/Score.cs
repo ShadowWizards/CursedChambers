@@ -15,7 +15,7 @@ public class Score : MonoBehaviour
 
     public void SetScore(int value)
     {
-        container.GetComponent<TextMeshProUGUI>().SetText(value.ToString());
+        container.Find("ScoreAmount").GetComponent<TextMeshProUGUI>().SetText(value.ToString());
     }
     
 }
