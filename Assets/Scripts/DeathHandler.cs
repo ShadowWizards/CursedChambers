@@ -32,7 +32,6 @@ public class DeathHandler : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetFloat("Speed", 0);
 
         // Turns off inventory UI and Shop UI
-        GameObject.Find("UI_Inventory").SetActive(false);
         GameObject.Find("Shop").SetActive(false);
 
         // Stops player from continuing movement after death

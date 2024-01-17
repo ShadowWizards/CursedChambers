@@ -83,6 +83,7 @@ public class PlayerDamageHandler : MonoBehaviour
             // Destroy Player object once hp is 0
             if(_player.Hp <= 0)
             {
+                AudioMenager.Instance.playSFX("PlayerDeath");
                 Kill();
             }
         }

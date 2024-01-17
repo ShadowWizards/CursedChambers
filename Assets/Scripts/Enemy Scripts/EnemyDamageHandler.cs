@@ -32,7 +32,9 @@ public class EnemyDamageHandler : MonoBehaviour
         {
             
             Debug.Log("Hit");
-            FlashDamage();
+            AudioMenager.Instance.playSFX("EnemyHit");
+            _enemySpriteRenderer.color = Color.red;
+            _enemy.Hp -= 2;
 
             float damage = _player.Str + Random.Range(-1, 2);
             if(damage < 0)
