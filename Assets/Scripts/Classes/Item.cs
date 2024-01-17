@@ -98,6 +98,24 @@ public class Item : MonoBehaviour
             }
         }
     }
+
+    public bool GiveStr
+    {
+        get
+        {
+            switch (ItemType)
+            {
+                case ItemEnum.SwordBrown:
+                case ItemEnum.SwordRed:
+                case ItemEnum.SwordYellow:
+                case ItemEnum.SwordSilverAndBlack:
+                case ItemEnum.SwordSilverAndYellow:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+    }
     
     public bool isEquipped;
     
@@ -356,6 +374,18 @@ public class Item : MonoBehaviour
         }
     }
 
+    public static float GetStr(ItemEnum itemType)
+    {
+        switch (itemType)
+        {
+            default:
+            case ItemEnum.SwordBrown: return 1;
+            case ItemEnum.SwordRed: return 1;
+            case ItemEnum.SwordYellow: return 1;
+            case ItemEnum.SwordSilverAndBlack: return 1;
+            case ItemEnum.SwordSilverAndYellow: return 1;
+        }
+    }
     public static float GetSpeed(ItemEnum itemType)
     {
         switch (itemType)

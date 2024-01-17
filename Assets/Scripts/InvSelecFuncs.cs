@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Classes;
 using Player_Scripts;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,7 +57,7 @@ public class InvSelecFuncs : MonoBehaviour
             return;
         }
 
-        if (!_itemToUse.IsHealing && !_itemToUse.IsConsumableShield && !_itemToUse.GivesSpeed && !_itemToUse.GiveMaxHp)
+        if (!_itemToUse.IsHealing && !_itemToUse.IsConsumableShield && !_itemToUse.GivesSpeed && !_itemToUse.GiveMaxHp && !_itemToUse.GiveStr)
         {
             Debug.Log("Item cannot be used");
             return;
@@ -74,7 +75,7 @@ public class InvSelecFuncs : MonoBehaviour
             _healthBar.SetShield(_playerClass.Shield);
         }
 
-        if (_itemToUse.GivesSpeed || _itemToUse.GiveMaxHp)
+        if (_itemToUse.GivesSpeed || _itemToUse.GiveMaxHp || _itemToUse.GiveStr)
         {
             if (_itemToUse.isEquipped)
             {
@@ -84,6 +85,11 @@ public class InvSelecFuncs : MonoBehaviour
 
             foreach (Transform item in _invCanvas.transform)
             {
+                if (item.gameObject.name.StartsWith($"Equip Slot {_itemToUse.ItemType.ToString().Substring(0,1)}")
+                    && item.gameObject.name.StartsWith("Equip Slot H"))
+                {
+                    return;
+                }
                 if (item.gameObject.name.StartsWith($"Equip Slot {_itemToUse.ItemType.ToString().Substring(0,3)}"))
                 {
                     return;

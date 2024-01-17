@@ -247,7 +247,7 @@ namespace Player_Scripts
 
             foreach (var item in _playerClass.inventory)
             {
-                if (item.GivesSpeed || item.GiveMaxHp)
+                if (item.GivesSpeed || item.GiveMaxHp || item.GiveStr)
                 {
                     if (item.isEquipped)
                     {
@@ -309,6 +309,17 @@ namespace Player_Scripts
                 case Item.ItemEnum.HelmetYellow:
                     return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
                 
+                case Item.ItemEnum.HatBlue:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HatBrown:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HatRed:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HatSilver:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HatYellow:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                
                 case Item.ItemEnum.ArmourBlue:
                     return new Vector2(_invCanvasPos.x + (float)-76.1, _invCanvasPos.y + (float)386.4);
                 case Item.ItemEnum.ArmourBrown:
@@ -342,15 +353,15 @@ namespace Player_Scripts
                 case Item.ItemEnum.BootsYellow:
                     return new Vector2(_invCanvasPos.x + (float)76.4, _invCanvasPos.y + (float)386.4);
                 
-                case Item.ItemEnum.HatBlue:
+                case Item.ItemEnum.SwordBrown:
                     return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
-                case Item.ItemEnum.HatBrown:
+                case Item.ItemEnum.SwordRed:
                     return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
-                case Item.ItemEnum.HatRed:
+                case Item.ItemEnum.SwordYellow:
                     return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
-                case Item.ItemEnum.HatSilver:
+                case Item.ItemEnum.SwordSilverAndBlack:
                     return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
-                case Item.ItemEnum.HatYellow:
+                case Item.ItemEnum.SwordSilverAndYellow:
                     return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
                 
                 default:
@@ -384,6 +395,7 @@ namespace Player_Scripts
         {
             float maxHp = 10;
             float speed = 5;
+            float str = 2;
             foreach (var item in _playerClass.inventory)
             {
                 if (item.isEquipped)
@@ -397,11 +409,18 @@ namespace Player_Scripts
                     {
                         speed += Item.GetSpeed(item.ItemType);
                     }
+
+                    if (item.GiveStr)
+                    {
+                        str += Item.GetStr(item.ItemType);
+                    }
+                    
                 }
             }
 
             _playerClass.MaxHp = maxHp;
             _playerClass.Speed = speed;
+            _playerClass.Str = str;
         }
         
     }
