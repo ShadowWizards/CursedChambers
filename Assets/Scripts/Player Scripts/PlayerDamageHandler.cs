@@ -57,6 +57,7 @@ public class PlayerDamageHandler : MonoBehaviour
         // If Player is not invincible they take damage
         if(!_isInvincible)
         {
+            AudioMenager.Instance.playSFX("PlayerHit");
             if (_player.Shield > 0)
             {
                 
@@ -83,6 +84,7 @@ public class PlayerDamageHandler : MonoBehaviour
             // Destroy Player object once hp is 0
             if(_player.Hp <= 0)
             {
+                AudioMenager.Instance.playSFX("PlayerDeath");
                 Kill();
             }
         }

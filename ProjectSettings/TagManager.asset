@@ -13,6 +13,7 @@ TagManager:
   - InteractionButtons
   - ClickableSlots
   - Fade
+  - Score
   layers:
   - Default
   - TransparentFX
