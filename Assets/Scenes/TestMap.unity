@@ -30866,6 +30866,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6009695232886134791, guid: 915588f5a7bab8741a41ba14ee2c689f, type: 3}
+      propertyPath: GlovesBlue
+      value: 
+      objectReference: {fileID: -2124634695, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
+    - target: {fileID: -6009695232886134791, guid: 915588f5a7bab8741a41ba14ee2c689f, type: 3}
+      propertyPath: GlovesYellow
+      value: 
+      objectReference: {fileID: -1044615262, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
     - target: {fileID: 2921113631794494351, guid: 915588f5a7bab8741a41ba14ee2c689f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.677101
