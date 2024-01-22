@@ -24,6 +24,7 @@ public class PlayerAttackAnimator : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            AudioMenager.Instance.playSFX("Attack");
             _slashAnimator.SetBool("isAttacking",true);
             
             _player.playerCooldown = Time.time + (float)0.40;
@@ -33,6 +34,7 @@ public class PlayerAttackAnimator : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            AudioMenager.Instance.playSFX("Attack");
             _slashAnimator.SetBool("isAttacking",true);
 
             _player.playerCooldown = Time.time + (float)0.40;
@@ -42,6 +44,7 @@ public class PlayerAttackAnimator : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            AudioMenager.Instance.playSFX("Attack");
             _slashAnimator.SetBool("isAttacking",true);
 
             _player.playerCooldown = Time.time + (float)0.40;
@@ -51,6 +54,7 @@ public class PlayerAttackAnimator : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            AudioMenager.Instance.playSFX("Attack");
             _slashAnimator.SetBool("isAttacking",true);
             
             _player.playerCooldown = Time.time + (float)0.40;

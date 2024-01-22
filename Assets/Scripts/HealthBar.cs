@@ -11,8 +11,13 @@ public class HealthBar : MonoBehaviour
     // Sets a max health for the slider
     public void SetMaxHealth(float health)
     {
+        if(sliderHealth.value > health)
+            sliderHealth.value = health;
+        
         sliderHealth.maxValue = health;
-        sliderHealth.value = health;
+
+        if(sliderHealth.value <= health)
+            SetHealth(sliderHealth.value);
     }
     
     // Sets the current health for the slider

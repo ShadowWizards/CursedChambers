@@ -59,8 +59,8 @@ MonoBehaviour:
   Alive: 0
   buffs: []
   debuffs: []
-  CoinDropped: 2
-  ScoreReward: 5
+  CoinDropped: 5
+  ScoreReward: 15
 --- !u!212 &9155594823962339829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpDamagePrefab: {fileID: 8325517170312801902, guid: f8b0772484bbab441a84252f58b82492, type: 3}
+  popUpText: {fileID: 0}
 --- !u!50 &414446768314981945
 Rigidbody2D:
   serializedVersion: 4

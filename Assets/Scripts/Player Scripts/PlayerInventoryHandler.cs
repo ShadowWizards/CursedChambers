@@ -28,12 +28,7 @@ namespace Player_Scripts
 
         void Update()
         {
-            //if (_playerInventory.Contains(_playerInventory.FirstOrDefault(x=>x.ItemType == Item.ItemEnum.BuffItem)))
-            //{
-            //    _playerClass.Speed = 10;
-            //}
-
-            
+           
         }
 
         

@@ -50,3 +50,38 @@ MonoBehaviour:
   Peach: {fileID: 21300000, guid: a50f6b6cf40728e40910a8c3e4be5b92, type: 3}
   Pitahaya: {fileID: 21300000, guid: 0b30121651bd5ed4ba1a4d8917be3f33, type: 3}
   Pepper: {fileID: 21300000, guid: d78fe21b3ce4b7e48a8e1864ff5b208f, type: 3}
+  FlaskGreen: {fileID: 21300000, guid: 53bad27e32b56c34298073e143f354ff, type: 3}
+  FlaskRed: {fileID: 21300000, guid: 51d399af416905346ba1c36096d2804c, type: 3}
+  FlaskPurple: {fileID: 21300000, guid: 939b783d5723c7b4ab4a9a7c71070bab, type: 3}
+  FlaskOrange: {fileID: 21300000, guid: 2050a2cb51acee94aac463f153af6512, type: 3}
+  ArmourBrown: {fileID: -992754372, guid: b85364f9fd7c7c641a112651843b5a00, type: 3}
+  ArmourSilver: {fileID: -1785570557, guid: b85364f9fd7c7c641a112651843b5a00, type: 3}
+  ArmourBlue: {fileID: -2113630050, guid: b85364f9fd7c7c641a112651843b5a00, type: 3}
+  ArmourYellow: {fileID: -94134857, guid: b85364f9fd7c7c641a112651843b5a00, type: 3}
+  ArmourRed: {fileID: 1370245094, guid: b85364f9fd7c7c641a112651843b5a00, type: 3}
+  BootsBrown: {fileID: -130485549, guid: e0981f7b6f6594e48af49cb6305408b9, type: 3}
+  BootsSilver: {fileID: 484226113, guid: e0981f7b6f6594e48af49cb6305408b9, type: 3}
+  BootsBlue: {fileID: -1629981409, guid: e0981f7b6f6594e48af49cb6305408b9, type: 3}
+  BootsYellow: {fileID: -769792268, guid: e0981f7b6f6594e48af49cb6305408b9, type: 3}
+  BootsRed: {fileID: -472588859, guid: e0981f7b6f6594e48af49cb6305408b9, type: 3}
+  GlovesBrown: {fileID: -197949444, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
+  GlovesSilver: {fileID: 1489720140, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
+  GlovesYellow: {fileID: -2124634695, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
+  GlovesBlue: {fileID: -1044615262, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
+  GlovesRed: {fileID: 265835645, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
+  HatBrown: {fileID: 1745219915, guid: 8d46daffa5de662428b415c23d0934a5, type: 3}
+  HatSilver: {fileID: 522112, guid: 8d46daffa5de662428b415c23d0934a5, type: 3}
+  HatBlue: {fileID: -558970117, guid: 8d46daffa5de662428b415c23d0934a5, type: 3}
+  HatYellow: {fileID: -162673165, guid: 8d46daffa5de662428b415c23d0934a5, type: 3}
+  HatRed: {fileID: 1324071608, guid: 8d46daffa5de662428b415c23d0934a5, type: 3}
+  HelmetBrown: {fileID: -1308942533, guid: 7ff5539273b7e3f4383d852ea558d658, type: 3}
+  HelmetSilver: {fileID: -1402389541, guid: 7ff5539273b7e3f4383d852ea558d658, type: 3}
+  HelmetBlue: {fileID: -418511224, guid: 7ff5539273b7e3f4383d852ea558d658, type: 3}
+  HelmetYellow: {fileID: -2030031588, guid: 7ff5539273b7e3f4383d852ea558d658, type: 3}
+  HelmetRed: {fileID: -353587385, guid: 7ff5539273b7e3f4383d852ea558d658, type: 3}
+  SwordBrown: {fileID: -257351307, guid: 1c4fbdf5ff1767b4a966f7197ae1fdae, type: 3}
+  SwordSilverAndYellow: {fileID: 31084772, guid: 1c4fbdf5ff1767b4a966f7197ae1fdae, type: 3}
+  SwordSilverAndBlack: {fileID: 7794244, guid: 1c4fbdf5ff1767b4a966f7197ae1fdae, type: 3}
+  SwordYellow: {fileID: 1326978433, guid: 1c4fbdf5ff1767b4a966f7197ae1fdae, type: 3}
+  SwordRed: {fileID: -1865713693, guid: 1c4fbdf5ff1767b4a966f7197ae1fdae, type: 3}
+  Error: {fileID: 21300000, guid: 7e89c64ea84ba2249adb83ddb0067edb, type: 3}

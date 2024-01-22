@@ -7,7 +7,8 @@ public class RewardHandler : MonoBehaviour
 {
     // References
     private Player _player;
-    private Currency _currency;
+    public Currency _currency;
+    public Score _score;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,6 @@ public class RewardHandler : MonoBehaviour
     public void addScore(int score)
     {
         _player.Score += score;
+        _score.SetScore(_player.Score);
     }
 }
