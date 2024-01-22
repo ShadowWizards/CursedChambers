@@ -3,15 +3,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float _speed;
     private Rigidbody2D _playerRigidBody;
     private Player _player;
     private Vector2 _moveInput;
     private Vector2 _moveDir;
-    private Vector2 _playerXVelocity;
-    private Vector2 _playerYVelocity;
     private Animator _animator;
-    private KeyCode _lastKeyPressed;
     private float _actualSpeed;
 
     // Start is called before the first frame update
@@ -42,25 +38,6 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("Speed",_actualSpeed);
         _animator.SetFloat("Horizontal", _moveInput.x);
         _animator.SetFloat("Vertical", _moveInput.y);
-
-        // Get last key pressed by the user
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            _lastKeyPressed = KeyCode.D;
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            _lastKeyPressed = KeyCode.A;
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            _lastKeyPressed = KeyCode.W;
-
-        }
-        else if(Input.GetKeyDown(KeyCode.S))
-        {
-            _lastKeyPressed = KeyCode.S;
-        }
 
         // // Set player speed
         if (_moveInput.x == 0 && _moveInput.y == 0)

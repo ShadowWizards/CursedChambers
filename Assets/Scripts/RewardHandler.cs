@@ -14,7 +14,6 @@ public class RewardHandler : MonoBehaviour
     {
         _player = GetComponent<Player>();
         _currency = GameObject.FindGameObjectWithTag("Currency").GetComponent<Currency>();
-        _score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
     }
 
     // Adds a value to the players total coin and updates the UI

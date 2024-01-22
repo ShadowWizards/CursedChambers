@@ -19,6 +19,7 @@ namespace Player_Scripts
         private Vector2 _invCanvasPos;
         private Player _playerClass;
         private GameObject _clickableSlots;
+        private HealthBar _healthBar;
 
         private void Start()
         {
@@ -26,6 +27,7 @@ namespace Player_Scripts
             _invCanvas = GameObject.FindGameObjectWithTag("Inventory_Canvas");
             _inventoryGameObject = GameObject.FindGameObjectWithTag("Inventory");
             _clickableSlots = GameObject.FindGameObjectWithTag("ClickableSlots");
+            _healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
 
             HideClickableSlots();
             
@@ -419,6 +421,7 @@ namespace Player_Scripts
             }
 
             _playerClass.MaxHp = maxHp;
+            _healthBar.SetMaxHealth(maxHp);
             _playerClass.Speed = speed;
             _playerClass.Str = str;
         }

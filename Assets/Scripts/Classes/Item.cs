@@ -165,13 +165,54 @@ public class Item : MonoBehaviour
 
     public static int GetCost(ItemEnum itemType) {
         switch (itemType) {
-        default:
+        default:                    return 0;
         case ItemEnum.Orange:       return 10;
         case ItemEnum.Grape:       return 10;
         case ItemEnum.Pineapple:       return 20;
         case ItemEnum.Peach:       return 30;
         case ItemEnum.Pitahaya:       return 40;
         case ItemEnum.Pepper:       return 50;
+
+        case ItemEnum.FlaskGreen:     return 10;
+        case ItemEnum.FlaskRed:     return 20;
+        case ItemEnum.FlaskPurple:     return 30;
+        case ItemEnum.FlaskOrange:     return 40;
+
+        case ItemEnum.ArmourBrown: return 10;
+        case ItemEnum.ArmourSilver: return 25;
+        case ItemEnum.ArmourBlue: return 50;
+        case ItemEnum.ArmourYellow: return 100;
+        case ItemEnum.ArmourRed: return 150;
+
+        case ItemEnum.BootsBrown: return 10;
+        case ItemEnum.BootsSilver: return 25;
+        case ItemEnum.BootsBlue: return 50;
+        case ItemEnum.BootsYellow: return 100;
+        case ItemEnum.BootsRed: return 150;
+
+        case ItemEnum.GlovesBrown: return 10;
+        case ItemEnum.GlovesSilver: return 25;
+        case ItemEnum.GlovesBlue: return 50;
+        case ItemEnum.GlovesYellow: return 100;
+        case ItemEnum.GlovesRed: return 150;
+
+        case ItemEnum.HatBrown: return 10;
+        case ItemEnum.HatSilver: return 25;
+        case ItemEnum.HatBlue: return 50;
+        case ItemEnum.HatYellow: return 100;
+        case ItemEnum.HatRed: return 150;
+
+        case ItemEnum.HelmetBrown: return 10;
+        case ItemEnum.HelmetSilver: return 25;
+        case ItemEnum.HelmetBlue: return 50;
+        case ItemEnum.HelmetYellow: return 100;
+        case ItemEnum.HelmetRed: return 150;
+
+        case ItemEnum.SwordBrown: return 10;
+        case ItemEnum.SwordSilverAndYellow: return 25;
+        case ItemEnum.SwordSilverAndBlack: return 50;
+        case ItemEnum.SwordYellow: return 100;
+        case ItemEnum.SwordRed: return 150;
         }
     }
 
@@ -244,23 +285,23 @@ public class Item : MonoBehaviour
         switch (itemType)
         {
             default:
-            case ItemEnum.ArmourBlue: return 1;
             case ItemEnum.ArmourBrown: return 1;
-            case ItemEnum.ArmourRed: return 1;
-            case ItemEnum.ArmourSilver: return 1;
-            case ItemEnum.ArmourYellow: return 1;
+            case ItemEnum.ArmourSilver: return 2;
+            case ItemEnum.ArmourBlue: return 4;
+            case ItemEnum.ArmourYellow: return 5;
+            case ItemEnum.ArmourRed: return 6;
                     
-            case ItemEnum.GlovesBlue: return 1;
             case ItemEnum.GlovesBrown: return 1;
-            case ItemEnum.GlovesRed: return 1;
-            case ItemEnum.GlovesSilver: return 1;
-            case ItemEnum.GlovesYellow: return 1;
-                    
-            case ItemEnum.HelmetBlue: return 1;
-            case ItemEnum.HelmetBrown: return 1;
-            case ItemEnum.HelmetRed: return 1;
-            case ItemEnum.HelmetSilver: return 1;
-            case ItemEnum.HelmetYellow: return 1;
+            case ItemEnum.GlovesSilver: return 2;
+            case ItemEnum.GlovesBlue: return 4;
+            case ItemEnum.GlovesYellow: return 5;
+            case ItemEnum.GlovesRed: return 6;
+
+            case ItemEnum.HelmetBrown: return 1;  
+            case ItemEnum.HelmetSilver: return 2;   
+            case ItemEnum.HelmetBlue: return 4;
+            case ItemEnum.HelmetYellow: return 5;
+            case ItemEnum.HelmetRed: return 6;
         }
     }
     public static float GetShield(ItemEnum itemType)
@@ -380,10 +421,10 @@ public class Item : MonoBehaviour
         {
             default:
             case ItemEnum.SwordBrown: return 1;
-            case ItemEnum.SwordRed: return 1;
-            case ItemEnum.SwordYellow: return 1;
-            case ItemEnum.SwordSilverAndBlack: return 1;
-            case ItemEnum.SwordSilverAndYellow: return 1;
+            case ItemEnum.SwordSilverAndYellow: return 2;
+            case ItemEnum.SwordSilverAndBlack: return 3;
+            case ItemEnum.SwordYellow: return 4;
+            case ItemEnum.SwordRed: return 5;
         }
     }
     public static float GetSpeed(ItemEnum itemType)
@@ -391,17 +432,17 @@ public class Item : MonoBehaviour
         switch (itemType)
         {
             default:
-            case ItemEnum.BootsBlue: return 1;
             case ItemEnum.BootsBrown: return 1;
-            case ItemEnum.BootsSilver: return 1;
-            case ItemEnum.BootsRed: return 1;
-            case ItemEnum.BootsYellow: return 1;
+            case ItemEnum.BootsSilver: return 2;
+            case ItemEnum.BootsBlue: return 3;
+            case ItemEnum.BootsYellow: return 4;
+            case ItemEnum.BootsRed: return 5;
                     
             case ItemEnum.HatBrown: return 1;
-            case ItemEnum.HatRed: return 1;
-            case ItemEnum.HatSilver: return 1;
-            case ItemEnum.HatYellow: return 1;
-            case ItemEnum.HatBlue: return 1;
+            case ItemEnum.HatSilver: return 2;
+            case ItemEnum.HatBlue: return 3;
+            case ItemEnum.HatYellow: return 4;
+            case ItemEnum.HatRed: return 5;
         }
     }
 }
