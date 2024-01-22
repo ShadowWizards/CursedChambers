@@ -32,6 +32,7 @@ public class InputHandler : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.F))
         {
             _inventoryFunctions.OpenInventory();
+            
         }
     }
 }

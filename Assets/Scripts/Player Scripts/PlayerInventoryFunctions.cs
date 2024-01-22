@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Classes;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,8 +36,14 @@ namespace Player_Scripts
         public bool AddItem(Item.ItemEnum itemType)
         {
             // Get the amount of items already existing in the Inventory Canvas
-            _invCanvasChildren = _invCanvas.transform.childCount;
-            
+            _invCanvasChildren = 0;
+            foreach (Transform child in _invCanvas.transform)
+            {
+                if (child.gameObject.name.StartsWith("Slot"))
+                {
+                    _invCanvasChildren++;
+                }
+            }
             // Create Item Object
             Item item = _invCanvas.AddComponent<Item>();
             item.ItemType = itemType;
@@ -68,6 +75,7 @@ namespace Player_Scripts
         // Remove Item from the Player's Inventory
         public void RemoveItem(Item item)
         {
+            
             // Making sure the inventory is not empty
             if (_playerClass.inventory.Count == 0)
             {
@@ -79,9 +87,19 @@ namespace Player_Scripts
 
             if (ItemExists(item))
             {
+                if (item.isEquipped)
+                {
+                    item.isEquipped = false;
+                    GenerateEquipSlots();
+                    ApplyEquipableEffects();
+                    Debug.Log("Item unequipped");
+                    return;
+                }
                 _playerClass.inventory.Remove(item);
                 RemoveInvEntry(item);
                 ReOrganizeSlots();
+                GenerateEquipSlots();
+                ApplyEquipableEffects();
                 Debug.Log("Item removed");
             }
             else
@@ -129,7 +147,14 @@ namespace Player_Scripts
             {
                 return;
             }
-            _invCanvasChildren = _invCanvas.transform.childCount;
+            _invCanvasChildren = 0;
+            foreach (Transform child in _invCanvas.transform)
+            {
+                if (child.gameObject.name.StartsWith("Slot"))
+                {
+                    _invCanvasChildren++;
+                }
+            }
             _invSlotAdd = 1;
             
             foreach (var item in _playerClass.inventory)
@@ -169,7 +194,14 @@ namespace Player_Scripts
             {
                 return;
             }
-            _invCanvasChildren = _invCanvas.transform.childCount;
+            _invCanvasChildren = 0;
+            foreach (Transform child in _invCanvas.transform)
+            {
+                if (child.gameObject.name.StartsWith("Slot"))
+                {
+                    _invCanvasChildren++;
+                }
+            }
             _invSlotAdd = _invCanvasChildren + 1;
             
             if (_invCanvasChildren == _playerClass.inventory.Count)
@@ -196,6 +228,41 @@ namespace Player_Scripts
             }
             
             
+        }
+
+        public void GenerateEquipSlots()
+        {
+            if (_playerClass.inventory.Count == 0)
+            {
+                return;
+            }
+
+            foreach (Transform child in _invCanvas.transform)
+            {
+                if (child.gameObject.name.StartsWith("Equip Slot"))
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+
+            foreach (var item in _playerClass.inventory)
+            {
+                if (item.GivesSpeed || item.GiveMaxHp || item.GiveStr)
+                {
+                    if (item.isEquipped)
+                    {
+                        GameObject itemFrame = new GameObject($"Equip Slot {item.ItemType.ToString()}");
+                        Image image =  itemFrame.AddComponent<Image>();
+                        image.sprite = Item.GetSprite(item.ItemType);
+                        image.color = Color.white;
+                        
+                        RectTransform rectTransform = itemFrame.GetComponent<RectTransform>();
+                        rectTransform.sizeDelta = new Vector2(55, 55);
+                        rectTransform.localPosition = GetEquipSlot(item.ItemType);
+                        itemFrame.transform.SetParent(_invCanvas.transform);
+                    }
+                }
+            }
         }
         
         // This function will return the exact position of each Inventory slot
@@ -227,6 +294,81 @@ namespace Player_Scripts
             }
         }
 
+        public Vector2 GetEquipSlot(Item.ItemEnum itemType)
+        {
+            switch (itemType)
+            {
+                case Item.ItemEnum.HelmetBlue:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HelmetBrown:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HelmetRed:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HelmetSilver:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HelmetYellow:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                
+                case Item.ItemEnum.HatBlue:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HatBrown:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HatRed:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HatSilver:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.HatYellow:
+                    return new Vector2(_invCanvasPos.x + -152, _invCanvasPos.y + (float)386.4);
+                
+                case Item.ItemEnum.ArmourBlue:
+                    return new Vector2(_invCanvasPos.x + (float)-76.1, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.ArmourBrown:
+                    return new Vector2(_invCanvasPos.x + (float)-76.1, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.ArmourRed:
+                    return new Vector2(_invCanvasPos.x + (float)-76.1, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.ArmourSilver:
+                    return new Vector2(_invCanvasPos.x + (float)-76.1, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.ArmourYellow:
+                    return new Vector2(_invCanvasPos.x + (float)-76.1, _invCanvasPos.y + (float)386.4);
+                
+                case Item.ItemEnum.GlovesBlue:
+                    return new Vector2(_invCanvasPos.x + (float)1.7, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.GlovesBrown:
+                    return new Vector2(_invCanvasPos.x + (float)1.7, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.GlovesRed:
+                    return new Vector2(_invCanvasPos.x + (float)1.7, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.GlovesSilver:
+                    return new Vector2(_invCanvasPos.x + (float)1.7, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.GlovesYellow:
+                    return new Vector2(_invCanvasPos.x + (float)1.7, _invCanvasPos.y + (float)386.4);
+                
+                case Item.ItemEnum.BootsBlue:
+                    return new Vector2(_invCanvasPos.x + (float)76.4, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.BootsBrown:
+                    return new Vector2(_invCanvasPos.x + (float)76.4, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.BootsRed:
+                    return new Vector2(_invCanvasPos.x + (float)76.4, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.BootsSilver:
+                    return new Vector2(_invCanvasPos.x + (float)76.4, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.BootsYellow:
+                    return new Vector2(_invCanvasPos.x + (float)76.4, _invCanvasPos.y + (float)386.4);
+                
+                case Item.ItemEnum.SwordBrown:
+                    return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.SwordRed:
+                    return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.SwordYellow:
+                    return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.SwordSilverAndBlack:
+                    return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
+                case Item.ItemEnum.SwordSilverAndYellow:
+                    return new Vector2(_invCanvasPos.x + (float)154.2, _invCanvasPos.y + (float)386.4);
+                
+                default:
+                    return new Vector2(0, 0);
+            }
+        }
+
         public void OpenInventory()
         {
             if (!_inventoryGameObject.activeSelf)
@@ -247,6 +389,38 @@ namespace Player_Scripts
                 child.gameObject.SetActive(false);
                 
             }
+        }
+
+        public void ApplyEquipableEffects()
+        {
+            float maxHp = 10;
+            float speed = 5;
+            float str = 2;
+            foreach (var item in _playerClass.inventory)
+            {
+                if (item.isEquipped)
+                {
+                    if (item.GiveMaxHp)
+                    {
+                        maxHp += Item.GetMaxHP(item.ItemType);
+                    }
+
+                    if (item.GivesSpeed)
+                    {
+                        speed += Item.GetSpeed(item.ItemType);
+                    }
+
+                    if (item.GiveStr)
+                    {
+                        str += Item.GetStr(item.ItemType);
+                    }
+                    
+                }
+            }
+
+            _playerClass.MaxHp = maxHp;
+            _playerClass.Speed = speed;
+            _playerClass.Str = str;
         }
         
     }

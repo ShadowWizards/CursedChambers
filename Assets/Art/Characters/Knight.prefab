@@ -56,14 +56,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0371187ce29963740a40911dd6b438cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 20
+  Hp: 10
+  MaxHp: 10
   Str: 2
   Shield: 0
   Speed: 5
   inventorySpace: 0
   invincibilityDuration: 1
   playerCooldown: 0
-  Coins: 0
+  Coins: 500
   Score: 0
   isAlive: 1
   inventory: []
