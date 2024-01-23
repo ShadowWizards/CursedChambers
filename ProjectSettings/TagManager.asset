@@ -14,6 +14,7 @@ TagManager:
   - ClickableSlots
   - Fade
   - Score
+  - UI_Canvas
   layers:
   - Default
   - TransparentFX

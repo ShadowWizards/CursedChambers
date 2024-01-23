@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Assets.Scripts.Classes;
 using Player_Scripts;
 using Unity.VisualScripting;
@@ -46,7 +47,7 @@ public class InvSelecFuncs : MonoBehaviour
         _interactionButtons.transform.localPosition = new Vector2(x: button.transform.localPosition.x + 6, y: button.transform.localPosition.y + 93);
     }
 
-    public void UseItem()
+    public  void UseItem()
     {
         
         Debug.Log("Used " + _currentButton.name);
