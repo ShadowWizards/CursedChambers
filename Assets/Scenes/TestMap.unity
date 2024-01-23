@@ -730,6 +730,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_5
       objectReference: {fileID: 0}
+    - target: {fileID: 780263683460800013, guid: 8f1eb9bde79f7eb469e578e6e991d67b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c0df7f0641e5ae74bb906351cd486ef2, type: 3}
+    - target: {fileID: 780263683460800013, guid: 8f1eb9bde79f7eb469e578e6e991d67b, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1056757968230278746, guid: 8f1eb9bde79f7eb469e578e6e991d67b, type: 3}
       propertyPath: m_Name
       value: Wall_5
