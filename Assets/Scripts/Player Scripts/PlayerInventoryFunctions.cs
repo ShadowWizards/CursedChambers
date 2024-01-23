@@ -116,6 +116,16 @@ namespace Player_Scripts
                 
                     );
                 }
+                else
+                {
+                    _playerClass.inventory.Remove(item);
+                    RemoveInvEntry(item);
+                    ReOrganizeSlots();
+                    GenerateEquipSlots();
+                    ApplyEquipableEffects();
+                    Debug.Log("Item removed");
+                    _dialogWindow.DestroyDiagComponent();
+                }
                 
             }
             else
