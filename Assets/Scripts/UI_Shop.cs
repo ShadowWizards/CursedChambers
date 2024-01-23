@@ -123,34 +123,33 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.Find("itemImage").GetComponent<UnityEngine.UI.Image>().sprite = itemSprite;
 
         shopItemTransform.GetComponent<Button_UI>().ClickFunc = () => {
-            if(_player.Coins >= Item.GetCost(itemType))
-            {
-                
-                    DialogWindow confirmation = _dialogWindow.InitializeDialog("Attention","Are you sure you want to buy this item?",
-                        () =>
+            DialogWindow confirmation = _dialogWindow.InitializeDialog("Attention","Are you sure you want to buy this item?",
+                () =>
+                {
+                    if(_player.Coins >= Item.GetCost(itemType))
+                    { 
+                        if (_inventoryFunctions.AddItem(itemType))
                         {
-                            if (_inventoryFunctions.AddItem(itemType))
-                            {
-                                _rewardHandler.addCurrency(-Item.GetCost(itemType));
-                                _shopCustomer.BoughtItem(itemType);
-                                Destroy(shopItemTransform.gameObject);
-                            }
-                            else
-                            {
-                                Debug.Log("Can't purchase item");
-                            }
-                            _dialogWindow.DestroyDiagComponent();
-                        },
-                        () =>
+                            _rewardHandler.addCurrency(-Item.GetCost(itemType));
+                            _shopCustomer.BoughtItem(itemType);
+                            Destroy(shopItemTransform.gameObject);
+                        }
+                        else
                         {
-                            _dialogWindow.DestroyDiagComponent();
-                            return;
-                        });
-            }
-            else
-            {
-                Debug.Log("Insufficient Coins");
-            }
+                            Debug.Log("Can't purchase item");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Insufficient Coins");
+                    }
+                    _dialogWindow.DestroyDiagComponent();
+                },
+                () =>
+                {
+                    _dialogWindow.DestroyDiagComponent();
+                    return;
+                });
         };
     }
     public void Show(IShopCustomer shopCustomer)

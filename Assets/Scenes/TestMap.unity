@@ -389,37 +389,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2123367986845714812, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 83ba4c0d03d784a42871278cda5cc824, type: 3}
-    - target: {fileID: 2123367986845714812, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123367986845714812, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123367986845714812, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2336229617363939927, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2968580968131652491, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3705895097536107481, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3705895097536107481, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3752492954654747566, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -428,10 +404,6 @@ PrefabInstance:
     - target: {fileID: 3752492954654747566, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927008523037787601, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5341145964356068830, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -473,17 +445,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7042417953726467357, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7357363568432972462, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
       propertyPath: m_TagString
       value: UI_Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8237381596137959583, guid: 7bad07262ee893c63805ffcaa19758a2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -724,6 +688,10 @@ PrefabInstance:
     - target: {fileID: 684259852547226213, guid: 8f1eb9bde79f7eb469e578e6e991d67b, type: 3}
       propertyPath: m_Name
       value: Wall_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 780263683460800013, guid: 8f1eb9bde79f7eb469e578e6e991d67b, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1056757968230278746, guid: 8f1eb9bde79f7eb469e578e6e991d67b, type: 3}
       propertyPath: m_Name

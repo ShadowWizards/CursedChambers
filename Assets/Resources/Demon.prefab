@@ -60,7 +60,7 @@ MonoBehaviour:
   buffs: []
   debuffs: []
   CoinDropped: 50
-  ScoreReward: 40
+  ScoreReward: 100
 --- !u!212 &5085173352483457608
 SpriteRenderer:
   m_ObjectHideFlags: 0

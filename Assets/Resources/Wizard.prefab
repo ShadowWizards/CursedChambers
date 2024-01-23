@@ -59,8 +59,8 @@ MonoBehaviour:
   Alive: 0
   buffs: []
   debuffs: []
-  CoinDropped: 6
-  ScoreReward: 10
+  CoinDropped: 30
+  ScoreReward: 60
 --- !u!212 &894685676640908375
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -245,4 +245,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
