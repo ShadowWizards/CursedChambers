@@ -94,25 +94,29 @@ namespace Player_Scripts
                     Debug.Log("Item unequipped");
                     return;
                 }
+
+                if (item.ItemForDelete)
+                {
+                    DialogWindow confirmation = _dialogWindow.InitializeDialog("BE CAREFUL!!!","Are you really sure you want to delete this item",
+                        () =>
+                        {
+                            _playerClass.inventory.Remove(item);
+                            RemoveInvEntry(item);
+                            ReOrganizeSlots();
+                            GenerateEquipSlots();
+                            ApplyEquipableEffects();
+                            Debug.Log("Item removed");
+                            _dialogWindow.DestroyDiagComponent();
+                        },
+                        () =>
+                        {
+                            _dialogWindow.DestroyDiagComponent();
+                            return;
+                        }
                 
-                DialogWindow confirmation = _dialogWindow.InitializeDialog("BE CAREFUL!!!","Are you really sure you want to delete this item",
-                    () =>
-                    {
-                        _playerClass.inventory.Remove(item);
-                        RemoveInvEntry(item);
-                        ReOrganizeSlots();
-                        GenerateEquipSlots();
-                        ApplyEquipableEffects();
-                        Debug.Log("Item removed");
-                        _dialogWindow.DestroyDiagComponent();
-                    },
-                    () =>
-                    {
-                        _dialogWindow.DestroyDiagComponent();
-                        return;
-                    }
+                    );
+                }
                 
-                );
             }
             else
             {

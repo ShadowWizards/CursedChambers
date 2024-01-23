@@ -57,7 +57,7 @@ public class InvSelecFuncs : MonoBehaviour
         {
             return;
         }
-
+        _itemToUse.ItemForDelete = false;
         if (!_itemToUse.IsHealing && !_itemToUse.IsConsumableShield && !_itemToUse.GivesSpeed && !_itemToUse.GiveMaxHp && !_itemToUse.GiveStr)
         {
             Debug.Log("Item cannot be used");
@@ -118,7 +118,8 @@ public class InvSelecFuncs : MonoBehaviour
         {
             return;
         }
-        
+
+        _itemToUse.ItemForDelete = true;
         _inventoryFunctions.RemoveItem(_itemToUse);
         _interactionButtons.SetActive(false);
         _currentButton = null;
