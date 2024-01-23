@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Assets.Scripts.Classes;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace Player_Scripts
         private Player _playerClass;
         private GameObject _clickableSlots;
         private HealthBar _healthBar;
-
+        private DialogWindow _dialogWindow;
         private void Start()
         {
             _playerClass = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -28,11 +29,12 @@ namespace Player_Scripts
             _inventoryGameObject = GameObject.FindGameObjectWithTag("Inventory");
             _clickableSlots = GameObject.FindGameObjectWithTag("ClickableSlots");
             _healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
-
+            _dialogWindow = GameObject.FindGameObjectWithTag("UI_Canvas").GetComponent<DialogWindow>();
             HideClickableSlots();
             
             _inventoryGameObject.SetActive(false);
         }
+
 
         // Add Item to the player's Inventory
         public bool AddItem(Item.ItemEnum itemType)
@@ -55,12 +57,7 @@ namespace Player_Scripts
             bool itemExists = ItemExists(item);
             
             // Making sure the item doesn't already exist, and that there are no more than 1 healing items
-            if (HealingItemExists() && item.IsHealing)
-            {
-                Debug.Log("You already have a healing item");
-                return false;
-            }
-            else if (itemExists)
+           if (itemExists)
             {
                 Debug.Log("You already have this item");
                 return false;
@@ -86,7 +83,7 @@ namespace Player_Scripts
 
             // Getting the Item object from the Inventory
             //Item item = _playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(itemType));
-
+            
             if (ItemExists(item))
             {
                 if (item.isEquipped)
@@ -97,12 +94,39 @@ namespace Player_Scripts
                     Debug.Log("Item unequipped");
                     return;
                 }
-                _playerClass.inventory.Remove(item);
-                RemoveInvEntry(item);
-                ReOrganizeSlots();
-                GenerateEquipSlots();
-                ApplyEquipableEffects();
-                Debug.Log("Item removed");
+
+                if (item.ItemForDelete)
+                {
+                    DialogWindow confirmation = _dialogWindow.InitializeDialog("BE CAREFUL!!!","Are you really sure you want to delete this item",
+                        () =>
+                        {
+                            _playerClass.inventory.Remove(item);
+                            RemoveInvEntry(item);
+                            ReOrganizeSlots();
+                            GenerateEquipSlots();
+                            ApplyEquipableEffects();
+                            Debug.Log("Item removed");
+                            _dialogWindow.DestroyDiagComponent();
+                        },
+                        () =>
+                        {
+                            _dialogWindow.DestroyDiagComponent();
+                            return;
+                        }
+                
+                    );
+                }
+                else
+                {
+                    _playerClass.inventory.Remove(item);
+                    RemoveInvEntry(item);
+                    ReOrganizeSlots();
+                    GenerateEquipSlots();
+                    ApplyEquipableEffects();
+                    Debug.Log("Item removed");
+                    _dialogWindow.DestroyDiagComponent();
+                }
+                
             }
             else
             {
@@ -121,23 +145,6 @@ namespace Player_Scripts
             }
 
             return false;
-        }
-
-        // A check if the item chosen to be checked is a healing one
-        public bool HealingItemExists()
-        {
-            switch (_playerClass.inventory)
-            {
-                case { } orange when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Orange))):
-                case { } grape when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Grape))):
-                case { } pineapple when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Pineapple))):
-                case { } peach when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Peach))):
-                case { } pitahaya  when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Pitahaya))):
-                case { } pepper when _playerClass.inventory.Contains(_playerClass.inventory.FirstOrDefault(x => x.ItemType.Equals(Item.ItemEnum.Pepper))):
-                    return true;
-                default:
-                    return false;
-            }
         }
 
         // This will reorganize the whole Inventory, meaning that it will re-render all the items

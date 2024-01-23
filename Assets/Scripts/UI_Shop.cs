@@ -17,6 +17,7 @@ public class UI_Shop : MonoBehaviour
     private PlayerInventoryFunctions _inventoryFunctions;
     private Player _player;
     private RewardHandler _rewardHandler;
+    private DialogWindow _dialogWindow;
     private void Awake()
     {
         _container = transform.Find("container");
@@ -24,6 +25,7 @@ public class UI_Shop : MonoBehaviour
         _inventoryFunctions = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventoryFunctions>();
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _rewardHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<RewardHandler>();
+        _dialogWindow = GameObject.FindGameObjectWithTag("UI_Canvas").GetComponent<DialogWindow>();
     }
 
     private void Start()
@@ -121,24 +123,34 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.Find("itemImage").GetComponent<UnityEngine.UI.Image>().sprite = itemSprite;
 
         shopItemTransform.GetComponent<Button_UI>().ClickFunc = () => {
-            if(_player.Coins >= Item.GetCost(itemType))
-            {
-                if(_inventoryFunctions.AddItem(itemType))
+            DialogWindow confirmation = _dialogWindow.InitializeDialog("Attention","Are you sure you want to buy this item?",
+                () =>
                 {
-                _rewardHandler.addCurrency(-Item.GetCost(itemType));
-                _shopCustomer.BoughtItem(itemType);
-                Destroy(shopItemTransform.gameObject);
-                }
-                else
+                    if(_player.Coins >= Item.GetCost(itemType))
+                    { 
+                        if (_inventoryFunctions.AddItem(itemType))
+                        {
+                            _rewardHandler.addCurrency(-Item.GetCost(itemType));
+                            _shopCustomer.BoughtItem(itemType);
+                            Destroy(shopItemTransform.gameObject);
+                        }
+                        else
+                        {
+                            Debug.Log("Can't purchase item");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Insufficient Coins");
+                    }
+                    _dialogWindow.DestroyDiagComponent();
+                },
+                () =>
                 {
-                    Debug.Log("Can't purchase item");
-                }
-            }
-            else
-            {
-                Debug.Log("Insufficient Coins");
-            }
-       };
+                    _dialogWindow.DestroyDiagComponent();
+                    return;
+                });
+        };
     }
     public void Show(IShopCustomer shopCustomer)
     {

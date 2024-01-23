@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Assets.Scripts.Classes;
 using Player_Scripts;
 using Unity.VisualScripting;
@@ -46,7 +47,7 @@ public class InvSelecFuncs : MonoBehaviour
         _interactionButtons.transform.localPosition = new Vector2(x: button.transform.localPosition.x + 6, y: button.transform.localPosition.y + 93);
     }
 
-    public void UseItem()
+    public  void UseItem()
     {
         
         Debug.Log("Used " + _currentButton.name);
@@ -56,7 +57,7 @@ public class InvSelecFuncs : MonoBehaviour
         {
             return;
         }
-
+        _itemToUse.ItemForDelete = false;
         if (!_itemToUse.IsHealing && !_itemToUse.IsConsumableShield && !_itemToUse.GivesSpeed && !_itemToUse.GiveMaxHp && !_itemToUse.GiveStr)
         {
             Debug.Log("Item cannot be used");
@@ -117,7 +118,8 @@ public class InvSelecFuncs : MonoBehaviour
         {
             return;
         }
-        
+
+        _itemToUse.ItemForDelete = true;
         _inventoryFunctions.RemoveItem(_itemToUse);
         _interactionButtons.SetActive(false);
         _currentButton = null;

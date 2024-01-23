@@ -1817,9 +1817,10 @@ GameObject:
   - component: {fileID: 2755401090097908906}
   - component: {fileID: 2498058800204196027}
   - component: {fileID: 1833532818728467514}
+  - component: {fileID: 8651255276831739474}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UI_Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1911,6 +1912,26 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8651255276831739474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357363568432972462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1677d41f7384dd78e2467f774bd42e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeButtonGameObject: {fileID: 0}
+  yesButtonGameObject: {fileID: 0}
+  noButtonGameObject: {fileID: 0}
+  titleGameObject: {fileID: 0}
+  messageGameObject: {fileID: 0}
+  dialogGameObject: {fileID: 0}
+  isOpen: 0
+  answer: 0
 --- !u!1 &7941175855598580908
 GameObject:
   m_ObjectHideFlags: 0

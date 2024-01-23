@@ -7,6 +7,7 @@ public class Item : MonoBehaviour
 
     public string Slot;
     public ItemEnum ItemType;
+    public bool ItemForDelete;
     public bool IsHealing
     {
         get
