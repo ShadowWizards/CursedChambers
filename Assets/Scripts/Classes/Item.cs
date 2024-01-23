@@ -7,6 +7,7 @@ public class Item : MonoBehaviour
 
     public string Slot;
     public ItemEnum ItemType;
+    public bool ItemForDelete;
     public bool IsHealing
     {
         get
@@ -92,6 +93,18 @@ public class Item : MonoBehaviour
                 case ItemEnum.HelmetRed:
                 case ItemEnum.HelmetSilver:
                 case ItemEnum.HelmetYellow:
+
+                case ItemEnum.BootsBlue:
+                case ItemEnum.BootsBrown:
+                case ItemEnum.BootsSilver:
+                case ItemEnum.BootsRed:
+                case ItemEnum.BootsYellow:
+                    
+                case ItemEnum.HatBrown:
+                case ItemEnum.HatRed:
+                case ItemEnum.HatSilver:
+                case ItemEnum.HatYellow:
+                case ItemEnum.HatBlue:
                     return true;
                 default:
                     return false;
@@ -302,6 +315,19 @@ public class Item : MonoBehaviour
             case ItemEnum.HelmetBlue: return 4;
             case ItemEnum.HelmetYellow: return 5;
             case ItemEnum.HelmetRed: return 6;
+
+            case ItemEnum.BootsBrown: return 1;
+            case ItemEnum.BootsSilver: return 1;
+            case ItemEnum.BootsBlue: return 2;
+            case ItemEnum.BootsYellow: return 2;
+            case ItemEnum.BootsRed: return 3;
+            
+                    
+            case ItemEnum.HatBrown: return 1;
+            case ItemEnum.HatSilver: return 2;
+            case ItemEnum.HatBlue: return 2;
+            case ItemEnum.HatYellow: return 3;
+            case ItemEnum.HatRed: return 4;
         }
     }
     public static float GetShield(ItemEnum itemType)
@@ -354,8 +380,8 @@ public class Item : MonoBehaviour
             case ItemEnum.HelmetYellow: return "Yellow Helmet";
             case ItemEnum.HelmetRed: return "Red Helmet";
             case ItemEnum.SwordBrown: return "Brown Sword";
-            case ItemEnum.SwordSilverAndYellow: return "Silver and Yellow Sword";
-            case ItemEnum.SwordSilverAndBlack: return "Silver and Black Sword";
+            case ItemEnum.SwordSilverAndYellow: return "S&Y Sword";
+            case ItemEnum.SwordSilverAndBlack: return "S&B Sword";
             case ItemEnum.SwordYellow: return "Yellow Sword";
             case ItemEnum.SwordRed: return "Red Sword";
         }
@@ -432,17 +458,17 @@ public class Item : MonoBehaviour
         switch (itemType)
         {
             default:
-            case ItemEnum.BootsBrown: return 1;
-            case ItemEnum.BootsSilver: return 2;
-            case ItemEnum.BootsBlue: return 3;
-            case ItemEnum.BootsYellow: return 4;
-            case ItemEnum.BootsRed: return 5;
+            case ItemEnum.BootsBrown: return 0;
+            case ItemEnum.BootsSilver: return 1;
+            case ItemEnum.BootsBlue: return 1;
+            case ItemEnum.BootsYellow: return 2;
+            case ItemEnum.BootsRed: return 2;
                     
-            case ItemEnum.HatBrown: return 1;
-            case ItemEnum.HatSilver: return 2;
-            case ItemEnum.HatBlue: return 3;
-            case ItemEnum.HatYellow: return 4;
-            case ItemEnum.HatRed: return 5;
+            case ItemEnum.HatBrown: return 0;
+            case ItemEnum.HatSilver: return 0;
+            case ItemEnum.HatBlue: return 1;
+            case ItemEnum.HatYellow: return 1;
+            case ItemEnum.HatRed: return 1;
         }
     }
 }

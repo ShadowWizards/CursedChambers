@@ -77,4 +77,18 @@ public class FadeInOut : MonoBehaviour
         deathHandler.playerIsDead();
         Time.timeScale = 0.75f;
     }
+
+    public void WinScreen()
+    {
+        fadeIn = true;
+        playerIsDead = true;
+
+        myImage.color = new Color32(59, 177, 67, 255);
+        alphaLevel = 0.25f;
+        
+
+        timeToFade /= 5;
+        deathHandler.PlayerWon();
+        Time.timeScale = 0.75f;
+    }
 }

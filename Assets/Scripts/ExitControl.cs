@@ -7,7 +7,7 @@ public class ExitControl : MonoBehaviour
 {
     private GameObject _player;
     private GameObject _UI;
-    private Transform container;
+    private Transform _container;
     public FadeInOut fade;
     private bool isInRange = false;
     public int sceneBuildIndex;
@@ -16,9 +16,9 @@ public class ExitControl : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _UI = GameObject.Find("UI");
-        container = transform.Find("ExitContainer");
+        _container = transform.Find("ExitContainer");
         fade = GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeInOut>();
-        container.gameObject.SetActive(false);
+        _container.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,12 +63,12 @@ public class ExitControl : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        container.gameObject.SetActive(true);
+        _container.gameObject.SetActive(true);
         isInRange = true;    
     }
 
     private void OnTriggerExit2D(Collider2D collider) {
-        container.gameObject.SetActive(false);
+        _container.gameObject.SetActive(false);
         isInRange = false;
     }
 }
