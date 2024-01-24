@@ -6,16 +6,16 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    private Transform container;
+    public TextMeshProUGUI container;
     // Start is called before the first frame update
     void Start()
     {
-        container = this.transform;
+        container = GameObject.Find("ScoreAmount").GetComponent<TextMeshProUGUI>();
     }
 
     public void SetScore(int value)
     {
-        container.Find("ScoreAmount").GetComponent<TextMeshProUGUI>().SetText(value.ToString());
+        container.SetText(value.ToString());
     }
     
 }

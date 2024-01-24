@@ -7,6 +7,11 @@ public class ShopTriggerCollider : MonoBehaviour
 
     [SerializeField] private UI_Shop uiShop;
 
+    private void Start()
+    {
+        uiShop = GameObject.FindGameObjectWithTag("Shop").GetComponent<UI_Shop>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         IShopCustomer shopCustomer = collider.GetComponent<IShopCustomer>();

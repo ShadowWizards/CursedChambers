@@ -26,6 +26,10 @@ public class DeathHandler : MonoBehaviour
         _playerRigidBody = _player.GetComponent<Rigidbody2D>();
         _deathContainer = GameObject.Find("Death");
         _victoryContainer = GameObject.Find("Victory");
+    }
+
+    void OnGUI()
+    {
         _deathContainer.SetActive(false);
         _victoryContainer.SetActive(false);
         EndScreen.SetActive(false);
