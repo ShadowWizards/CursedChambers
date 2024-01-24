@@ -7,7 +7,7 @@ using TMPro;
 
 public class DeathHandler : MonoBehaviour
 {
-    public GameObject EndScreen;
+    private GameObject EndScreen;
     private Animator _animatorDeath;
     private Animator _animatorVictory;
     private GameObject _deathContainer;

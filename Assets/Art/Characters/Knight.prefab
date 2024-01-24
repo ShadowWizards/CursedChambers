@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 5463141434738645046}
   - component: {fileID: 3512838410950098689}
   - component: {fileID: 6731642097457932397}
+  - component: {fileID: 6081485661757693171}
+  - component: {fileID: 5435776477219607589}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -289,8 +291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63820e179b239ff4ab49ea939608d730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currency: {fileID: 0}
-  _score: {fileID: 0}
 --- !u!114 &6731642097457932397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +301,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ea254aa950a359479566d5e50fdc46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6081485661757693171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511182684188009351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed92749cf7a53974fa3ee8b74cb36f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UI_Shop: {fileID: 0}
+  devToolsActivated: 0
+--- !u!114 &5435776477219607589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511182684188009351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4701e09c17cf0ea4d92e6e14eccd5fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8186098372908162979

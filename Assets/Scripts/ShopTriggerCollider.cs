@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ShopTriggerCollider : MonoBehaviour
 {
-
-    [SerializeField] private UI_Shop uiShop;
+    [SerializeField] private ExitShopController _exitShopController;
 
     private void Awake()
     {
-        uiShop = GameObject.FindGameObjectWithTag("Shop").GetComponent<UI_Shop>();
+        _exitShopController = GameObject.FindGameObjectWithTag("Player").GetComponent<ExitShopController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -17,7 +16,7 @@ public class ShopTriggerCollider : MonoBehaviour
         IShopCustomer shopCustomer = collider.GetComponent<IShopCustomer>();
         if (shopCustomer != null)
         {
-            uiShop.Show(shopCustomer);
+            _exitShopController.ShowShop();
         }
     }
 
@@ -26,7 +25,7 @@ public class ShopTriggerCollider : MonoBehaviour
         IShopCustomer shopCustomer = collider.GetComponent<IShopCustomer>();
         if (shopCustomer != null)
         {
-            uiShop.Hide();
+            _exitShopController.CloseShop();
         }
     }
 }
