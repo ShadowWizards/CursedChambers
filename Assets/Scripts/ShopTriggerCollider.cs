@@ -7,7 +7,7 @@ public class ShopTriggerCollider : MonoBehaviour
 
     [SerializeField] private UI_Shop uiShop;
 
-    private void Start()
+    private void Awake()
     {
         uiShop = GameObject.FindGameObjectWithTag("Shop").GetComponent<UI_Shop>();
     }
