@@ -1,6 +1,5 @@
 using System;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,7 +47,7 @@ namespace Assets.Scripts.Classes
             GameObject yesNoDialog = new GameObject("YesNoDialog");
             RectTransform dialogRectTransform = yesNoDialog.AddComponent<RectTransform>();
             Image diagBg = yesNoDialog.AddComponent<Image>();
-            diagBg.color = new Color32(89, 89, 89, 255);
+            diagBg.color = new Color32(33, 33, 33, 255);
             
             dialogRectTransform.sizeDelta = new Vector2(800, 500);
             
@@ -79,8 +78,8 @@ namespace Assets.Scripts.Classes
             tmpTitle.text = titleText;
             tmpTitle.horizontalAlignment = HorizontalAlignmentOptions.Center;
             tmpTitle.verticalAlignment = VerticalAlignmentOptions.Middle;
-            tmpTitle.font = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/TextMesh Pro/Fonts/OptimusPrinceps SDF.asset");
-            tmpTitle.color = new Color32(234, 234, 234, 255);
+            tmpTitle.font = Resources.Load<TMP_FontAsset>("OptimusStoryFont");
+            tmpTitle.color = new Color32(185, 173, 123, 255);
 
             dialogWindow.titleGameObject = title; 
             // Message Part of Dialog
@@ -100,8 +99,8 @@ namespace Assets.Scripts.Classes
             tmpMessageText.text = messageText;
             tmpMessageText.horizontalAlignment = HorizontalAlignmentOptions.Center;
             tmpMessageText.verticalAlignment = VerticalAlignmentOptions.Middle;
-            tmpMessageText.font = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/TextMesh Pro/Fonts/OptimusPrinceps SDF.asset");
-            tmpMessageText.color = new Color32(234, 234, 234, 255);
+            tmpMessageText.font = Resources.Load<TMP_FontAsset>("OptimusStoryFont");
+            tmpMessageText.color = new Color32(185, 173, 123, 255);
 
             dialogWindow.messageGameObject = message;
             // CloseButton Part of Dialog
@@ -155,15 +154,40 @@ namespace Assets.Scripts.Classes
             tmpButtonTextGameObject.horizontalAlignment = HorizontalAlignmentOptions.Center;
             tmpButtonTextGameObject.verticalAlignment = VerticalAlignmentOptions.Middle;
 
+            buttonComponent.navigation = new Navigation
+            {
+                mode = Navigation.Mode.None
+            };
+            
             switch (buttonType)
             {
                 case ButtonEnum.CloseButton:
                     buttonComponent.onClick.AddListener(delegate{onCloseClick(dialogWindow);});
                     break;
                 case ButtonEnum.YesButton:
+                    buttonComponent.colors = new ColorBlock
+                    {
+                        normalColor = new Color32(168,156,121,255),
+                        highlightedColor = new Color32(168,156,121,255),
+                        pressedColor = new Color32(129,116,80,255),
+                        colorMultiplier = 1,
+                        disabledColor = Color.white,
+                        fadeDuration = (float)0.1,
+                        selectedColor = Color.white
+                    };
                     buttonComponent.onClick.AddListener(delegate{onYesClick(dialogWindow,actionOnYes);});
                     break;
                 case ButtonEnum.NoButton:
+                    buttonComponent.colors = new ColorBlock
+                    {
+                        normalColor = new Color32(168,156,121,255),
+                        highlightedColor = new Color32(168,156,121,255),
+                        pressedColor = new Color32(129,116,80,255),
+                        colorMultiplier = 1,
+                        disabledColor = Color.white,
+                        fadeDuration = (float)0.1,
+                        selectedColor = Color.white
+                    };
                     buttonComponent.onClick.AddListener(delegate{onNoClick(dialogWindow,actionOnNo);});
                     break;
             }

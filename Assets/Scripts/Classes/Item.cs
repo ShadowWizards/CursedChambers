@@ -380,8 +380,8 @@ public class Item : MonoBehaviour
             case ItemEnum.HelmetYellow: return "Yellow Helmet";
             case ItemEnum.HelmetRed: return "Red Helmet";
             case ItemEnum.SwordBrown: return "Brown Sword";
-            case ItemEnum.SwordSilverAndYellow: return "Silver and Yellow Sword";
-            case ItemEnum.SwordSilverAndBlack: return "Silver and Black Sword";
+            case ItemEnum.SwordSilverAndYellow: return "S&Y Sword";
+            case ItemEnum.SwordSilverAndBlack: return "S&B Sword";
             case ItemEnum.SwordYellow: return "Yellow Sword";
             case ItemEnum.SwordRed: return "Red Sword";
         }
