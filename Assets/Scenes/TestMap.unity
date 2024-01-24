@@ -30431,6 +30431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_5
       objectReference: {fileID: 0}
+    - target: {fileID: 6110905344002979255, guid: 8f1eb9bde79f7eb469e578e6e991d67b, type: 3}
+      propertyPath: m_TagString
+      value: Shop
+      objectReference: {fileID: 0}
     - target: {fileID: 6265492685387926860, guid: 8f1eb9bde79f7eb469e578e6e991d67b, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -7,7 +7,7 @@ using TMPro;
 
 public class DeathHandler : MonoBehaviour
 {
-    private GameObject EndScreen;
+    public GameObject EndScreen;
     private Animator _animatorDeath;
     private Animator _animatorVictory;
     private GameObject _deathContainer;
@@ -26,10 +26,6 @@ public class DeathHandler : MonoBehaviour
         _playerRigidBody = _player.GetComponent<Rigidbody2D>();
         _deathContainer = GameObject.Find("Death");
         _victoryContainer = GameObject.Find("Victory");
-    }
-
-    void OnGUI()
-    {
         _deathContainer.SetActive(false);
         _victoryContainer.SetActive(false);
         EndScreen.SetActive(false);
