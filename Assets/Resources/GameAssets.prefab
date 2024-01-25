@@ -66,8 +66,8 @@ MonoBehaviour:
   BootsRed: {fileID: -472588859, guid: e0981f7b6f6594e48af49cb6305408b9, type: 3}
   GlovesBrown: {fileID: -197949444, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
   GlovesSilver: {fileID: 1489720140, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
-  GlovesYellow: {fileID: -2124634695, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
-  GlovesBlue: {fileID: -1044615262, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
+  GlovesYellow: {fileID: -1044615262, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
+  GlovesBlue: {fileID: -2124634695, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
   GlovesRed: {fileID: 265835645, guid: 0227e0c3db816c549b29fd2d0a289f3c, type: 3}
   HatBrown: {fileID: 1745219915, guid: 8d46daffa5de662428b415c23d0934a5, type: 3}
   HatSilver: {fileID: 522112, guid: 8d46daffa5de662428b415c23d0934a5, type: 3}

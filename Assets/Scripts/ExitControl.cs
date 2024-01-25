@@ -11,6 +11,7 @@ public class ExitControl : MonoBehaviour
     public FadeInOut fade;
     private bool isInRange = false;
     public int sceneBuildIndex;
+    private ExitShopController _shopController;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class ExitControl : MonoBehaviour
         _UI = GameObject.Find("UI");
         _container = transform.Find("ExitContainer");
         fade = GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeInOut>();
+        _shopController = _player.GetComponent<ExitShopController>();
         _container.gameObject.SetActive(false);
     }
 
@@ -26,6 +28,7 @@ public class ExitControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isInRange)
         {
+            _shopController.ReGenerateItems();
             StartCoroutine(LoadYourAsyncScene());
         }
     }

@@ -7,13 +7,14 @@ public class RewardHandler : MonoBehaviour
 {
     // References
     private Player _player;
-    public Currency _currency;
-    public Score _score;
+    private Currency _currency;
+    private Score _score;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _player = GetComponent<Player>();
         _currency = GameObject.FindGameObjectWithTag("Currency").GetComponent<Currency>();
+        _score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
     }
 
     // Adds a value to the players total coin and updates the UI

@@ -7,6 +7,7 @@ using Player_Scripts;
 using Assets.Scripts.Classes;
 using Random=UnityEngine.Random;
 using System;
+using Unity.VisualScripting;
 
 
 public class UI_Shop : MonoBehaviour
@@ -30,6 +31,14 @@ public class UI_Shop : MonoBehaviour
 
     private void Start()
     {
+        GenerateItems();
+        _shopItemTemplate.gameObject.SetActive(false);
+        Hide();
+    }
+    
+    private void GenerateItems()
+    {
+        _shopItemTemplate.gameObject.SetActive(true);
         // Display the consumables from slot 1 to 3
         for(int i = 0; i < 3; i++)
         {
@@ -95,7 +104,26 @@ public class UI_Shop : MonoBehaviour
             CreateItemButton(currentItem, Item.GetSprite(currentItem), Item.GetName(currentItem), Item.GetCost(currentItem), i);
         }
         _shopItemTemplate.gameObject.SetActive(false);
-        Hide();
+    }
+
+    public void ReGenerateItems()
+    {
+        bool currentlyClosed = !gameObject.activeSelf;
+        if(currentlyClosed)
+        {
+            Show();
+        }
+
+        for(int i = 0; i < 9; i++)
+        {
+            Destroy(GameObject.Find("shopSlot" + i));
+        }
+
+        if(currentlyClosed)
+        {
+            Hide();
+        }
+        GenerateItems();
     }
 
     private void CreateItemButton(Item.ItemEnum itemType, Sprite itemSprite, string itemName, int itemCost, int positionIndex)
@@ -117,6 +145,8 @@ public class UI_Shop : MonoBehaviour
         
         shopItemRectTransform.anchoredPosition = new Vector2(shopItemWidth, -shopItemHeight);
 
+        shopItemTransform.name = "shopSlot" + positionIndex;
+
         shopItemTransform.Find("nameText").GetComponent<TextMeshProUGUI>().SetText(itemName);
         shopItemTransform.Find("costText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
 
@@ -126,12 +156,11 @@ public class UI_Shop : MonoBehaviour
             DialogWindow confirmation = _dialogWindow.InitializeDialog("Attention","Are you sure you want to buy this item?",
                 () =>
                 {
-                    if(_player.Coins >= Item.GetCost(itemType))
+                    if(_player.Coins >= Item.GetCost(itemType) && _player.inventory.Count < 9)
                     { 
                         if (_inventoryFunctions.AddItem(itemType))
                         {
                             _rewardHandler.addCurrency(-Item.GetCost(itemType));
-                            _shopCustomer.BoughtItem(itemType);
                             Destroy(shopItemTransform.gameObject);
                         }
                         else
@@ -141,7 +170,7 @@ public class UI_Shop : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("Insufficient Coins");
+                        Debug.Log("Can't purchase item");
                     }
                     _dialogWindow.DestroyDiagComponent();
                 },
@@ -152,9 +181,8 @@ public class UI_Shop : MonoBehaviour
                 });
         };
     }
-    public void Show(IShopCustomer shopCustomer)
+    public void Show()
     {
-        this._shopCustomer = shopCustomer;
         gameObject.SetActive(true);
     }
 

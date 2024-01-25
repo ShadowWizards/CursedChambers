@@ -15,6 +15,7 @@ TagManager:
   - Fade
   - Score
   - UI_Canvas
+  - Shop
   layers:
   - Default
   - TransparentFX
